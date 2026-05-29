@@ -1,5 +1,14 @@
 import { motion } from "framer-motion";
-import { Search, Ruler, Frown, Clock, TrendingDown, PackageOpen, Users, MousePointer } from "lucide-react";
+import {
+  Search,
+  Ruler,
+  Frown,
+  Clock,
+  TrendingDown,
+  PackageOpen,
+  Users,
+  MousePointer,
+} from "lucide-react";
 
 const consumerStruggles = [
   {
@@ -59,7 +68,9 @@ export function Struggles() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <span className="text-[11px] uppercase tracking-[0.25em] text-foreground/55 font-medium">— Sound familiar? —</span>
+          <span className="text-[11px] uppercase tracking-[0.25em] text-foreground/55 font-medium">
+            — Sound familiar? —
+          </span>
           <h2 className="font-serif text-4xl md:text-5xl font-normal tracking-tight mt-4 leading-[1.05] text-balance">
             Their struggle. <span className="text-gradient-primary">Your struggle.</span>
           </h2>
@@ -83,7 +94,9 @@ export function Struggles() {
                 <div className="w-10 h-10 rounded-xl bg-neon-pink/10 flex items-center justify-center">
                   <Frown className="w-5 h-5 text-neon-pink" />
                 </div>
-                <h3 className="font-display text-xl font-semibold text-ink">Your consumers struggle with</h3>
+                <h3 className="font-display text-xl font-semibold text-ink">
+                  Your consumers struggle with
+                </h3>
               </div>
               <div className="space-y-5">
                 {consumerStruggles.map((s, i) => (

@@ -52,7 +52,9 @@ export function TryIt() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-12 gap-8 items-end mb-12">
           <div className="md:col-span-7">
-            <span className="text-[11px] uppercase tracking-[0.25em] text-foreground/55 font-medium">— Try it —</span>
+            <span className="text-[11px] uppercase tracking-[0.25em] text-foreground/55 font-medium">
+              — Try it —
+            </span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -80,13 +82,17 @@ export function TryIt() {
           <div className="md:col-span-7 rounded-[2rem] bg-glass-strong ring-glass shadow-glass overflow-hidden flex flex-col min-h-[520px]">
             <div className="flex items-center justify-between px-5 py-3 border-b border-white/40 bg-white/40">
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-neon-pink to-neon-purple flex items-center justify-center text-white text-xs font-bold">St</div>
+                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-neon-pink to-neon-purple flex items-center justify-center text-white text-xs font-bold">
+                  St
+                </div>
                 <span className="font-display text-sm font-semibold">Styailist</span>
                 <span className="ml-2 flex items-center gap-1 text-[10px] font-mono text-foreground/55">
                   <span className="w-1.5 h-1.5 rounded-full bg-neon-purple animate-pulse" /> live
                 </span>
               </div>
-              <span className="text-[10px] font-mono uppercase tracking-wider text-foreground/55">demo</span>
+              <span className="text-[10px] font-mono uppercase tracking-wider text-foreground/55">
+                demo
+              </span>
             </div>
 
             <div className="p-6 space-y-3 flex-1">
@@ -121,7 +127,14 @@ export function TryIt() {
                               transition={{ delay: 0.08 * i, duration: 0.4 }}
                               className="aspect-[3/4] rounded-xl relative overflow-hidden ring-1 ring-white/60 bg-white/40"
                             >
-                              <img src={p.img} alt={p.name} loading="lazy" width={512} height={704} className="absolute inset-0 w-full h-full object-cover" />
+                              <img
+                                src={p.img}
+                                alt={p.name}
+                                loading="lazy"
+                                width={512}
+                                height={704}
+                                className="absolute inset-0 w-full h-full object-cover"
+                              />
                               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent" />
                               <span className="absolute top-1.5 right-1.5 font-mono text-[9px] bg-white/90 text-ink px-1.5 py-0.5 rounded">
                                 {p.match}%
@@ -162,10 +175,11 @@ export function TryIt() {
               <div className="flex-1 rounded-full bg-white/70 ring-1 ring-white/60 px-4 py-2 text-xs text-foreground/50">
                 Ask Styailist anything…
               </div>
-              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-neon-pink to-neon-purple flex items-center justify-center text-white text-sm">→</div>
+              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-neon-pink to-neon-purple flex items-center justify-center text-white text-sm">
+                →
+              </div>
             </div>
           </div>
-
 
           {/* Style Passport result */}
           <div className="md:col-span-5 rounded-[2rem] bg-ink text-background p-6 relative overflow-hidden">
@@ -173,7 +187,9 @@ export function TryIt() {
             <div className="absolute -bottom-20 -left-20 w-60 h-60 rounded-full bg-neon-purple/30 blur-3xl" />
             <div className="relative">
               <div className="flex items-center justify-between">
-                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-background/55">Style Passport</p>
+                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-background/55">
+                  Style Passport
+                </p>
                 <span className="font-mono text-[10px] uppercase tracking-wider bg-white/10 text-background/70 ring-1 ring-white/15 rounded-full px-2 py-0.5">
                   Verified
                 </span>
@@ -195,25 +211,40 @@ export function TryIt() {
                   { k: "Highest shopping style", v: "Modern Romantic" },
                   { k: "Size", v: "M · UK 10" },
                 ].map((row) => (
-                  <div key={row.k} className="flex items-baseline justify-between gap-4 border-b border-background/10 pb-2">
-                    <dt className="font-mono text-[10px] uppercase tracking-wider text-background/55">{row.k}</dt>
-                    <dd className="font-display text-base font-medium text-background text-right">{row.v}</dd>
+                  <div
+                    key={row.k}
+                    className="flex items-baseline justify-between gap-4 border-b border-background/10 pb-2"
+                  >
+                    <dt className="font-mono text-[10px] uppercase tracking-wider text-background/55">
+                      {row.k}
+                    </dt>
+                    <dd className="font-display text-base font-medium text-background text-right">
+                      {row.v}
+                    </dd>
                   </div>
                 ))}
               </dl>
 
               <div className="mt-5 flex gap-2">
                 {["#c44a1f", "#a8c0a0", "#f0d78c", "#f8c8c0"].map((c) => (
-                  <div key={c} className="flex-1 h-7 rounded-full ring-1 ring-white/10" style={{ background: c }} />
+                  <div
+                    key={c}
+                    className="flex-1 h-7 rounded-full ring-1 ring-white/10"
+                    style={{ background: c }}
+                  />
                 ))}
               </div>
 
               <div className="mt-5 rounded-2xl bg-white/5 ring-1 ring-white/10 p-4">
-                <p className="font-mono text-[10px] uppercase tracking-wider text-background/55">Best match</p>
+                <p className="font-mono text-[10px] uppercase tracking-wider text-background/55">
+                  Best match
+                </p>
                 <p className="font-display text-lg font-semibold mt-1 leading-snug">
                   Fits your <span className="text-gradient-primary">Fall campaign</span> the best
                 </p>
-                <p className="text-xs text-background/60 mt-1">96% alignment across palette, silhouette &amp; fit.</p>
+                <p className="text-xs text-background/60 mt-1">
+                  96% alignment across palette, silhouette &amp; fit.
+                </p>
               </div>
             </div>
           </div>

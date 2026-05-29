@@ -23,6 +23,7 @@ Make sure you have [Node.js](https://nodejs.org/) (v22+ recommended) and `npm` o
 ### Installation
 
 1. Navigate to the project directory:
+
    ```bash
    cd "Style Showcase (1)"
    ```
@@ -37,6 +38,7 @@ Make sure you have [Node.js](https://nodejs.org/) (v22+ recommended) and `npm` o
 ### Running Locally
 
 Start the Vite development server:
+
 ```bash
 npm run dev
 # or
@@ -48,11 +50,13 @@ Open your browser and navigate to the local URL provided in the terminal (usuall
 ### Production Build
 
 To build the app for production:
+
 ```bash
 npm run build
 ```
 
 To preview the built app:
+
 ```bash
 npm run preview
 ```
@@ -65,7 +69,7 @@ npm run preview
 Style Showcase (1)/
 ├── src/
 │   ├── assets/           # Images, fonts, and static assets
-│   ├── components/       
+│   ├── components/
 │   │   ├── site/         # Core landing page sections (Hero, Nav, Struggles, etc.)
 │   │   └── ui/           # Reusable UI components (Radix + Tailwind)
 │   ├── hooks/            # Custom React hooks

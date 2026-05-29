@@ -43,8 +43,7 @@ export function WhyUs() {
             viewport={{ once: true }}
             className="font-display text-4xl md:text-6xl font-semibold tracking-tight mt-4 leading-[1.02]"
           >
-            Built for results.{" "}
-            <span className="text-gradient-primary">Designed for humans.</span>
+            Built for results. <span className="text-gradient-primary">Designed for humans.</span>
           </motion.h2>
         </div>
 

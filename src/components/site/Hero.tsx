@@ -1,16 +1,24 @@
 import { motion } from "framer-motion";
 import { LeadModal } from "./LeadModal";
 
-
 export function Hero() {
   return (
-
     <section id="home" className="relative pt-28 pb-24 overflow-hidden bg-hero-glow">
       {/* Ambient gradient washes */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute top-[-10%] left-[-10%] w-[55vw] h-[55vw] rounded-full bg-neon-pink/20 blur-[120px] animate-blob" />
-        <div className="absolute bottom-[-15%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-neon-purple/20 blur-[140px] animate-blob" style={{ animationDelay: "-8s" }} />
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
+        <div
+          className="absolute bottom-[-15%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-neon-purple/20 blur-[140px] animate-blob"
+          style={{ animationDelay: "-8s" }}
+        />
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
+        />
       </div>
 
       <div className="max-w-6xl mx-auto px-6 text-center relative">
@@ -29,9 +37,6 @@ export function Hero() {
           <span className="text-neon-purple">→</span>
         </motion.a>
 
-
-
-
         <motion.h1
           initial="hidden"
           animate="visible"
@@ -46,7 +51,11 @@ export function Hero() {
               key={`h1-${i}`}
               variants={{
                 hidden: { opacity: 0, y: 18 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+                },
               }}
               className="inline-block mr-[0.25em]"
             >
@@ -56,7 +65,11 @@ export function Hero() {
           <motion.span
             variants={{
               hidden: { opacity: 0, y: 18 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+              },
             }}
             className="inline-block text-gradient-primary py-2"
           >
@@ -65,7 +78,11 @@ export function Hero() {
           <motion.span
             variants={{
               hidden: { opacity: 0, y: 18 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+              },
             }}
             className="inline-block"
           >
@@ -87,7 +104,11 @@ export function Hero() {
               key={`p1-${i}`}
               variants={{
                 hidden: { opacity: 0, y: 12 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+                },
               }}
               className="inline-block mr-[0.25em]"
             >
@@ -105,18 +126,24 @@ export function Hero() {
           }}
           className="text-base md:text-lg text-foreground/70 leading-relaxed max-w-2xl mx-auto mt-8"
         >
-          {"Styailist collapses your entire range down to the products genuinely right for each shopper the moment they land.".split(" ").map((word, i) => (
-            <motion.span
-              key={`p2-${i}`}
-              variants={{
-                hidden: { opacity: 0, y: 8 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } },
-              }}
-              className="inline-block mr-[0.25em]"
-            >
-              {word}
-            </motion.span>
-          ))}
+          {"Styailist collapses your entire range down to the products genuinely right for each shopper the moment they land."
+            .split(" ")
+            .map((word, i) => (
+              <motion.span
+                key={`p2-${i}`}
+                variants={{
+                  hidden: { opacity: 0, y: 8 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
+                  },
+                }}
+                className="inline-block mr-[0.25em]"
+              >
+                {word}
+              </motion.span>
+            ))}
         </motion.p>
 
         <motion.div
@@ -145,14 +172,22 @@ export function Hero() {
                 "Will this look good on me?",
                 "Is this really my style?",
               ].map((t, i) => (
-                <span key={i} className="shrink-0 px-5 py-2.5 rounded-full bg-glass-strong ring-glass shadow-soft text-sm text-ink/80 font-medium">
-                  <span className="text-neon-pink mr-2">“</span>{t}<span className="text-neon-purple ml-1">”</span>
+                <span
+                  key={i}
+                  className="shrink-0 px-5 py-2.5 rounded-full bg-glass-strong ring-glass shadow-soft text-sm text-ink/80 font-medium"
+                >
+                  <span className="text-neon-pink mr-2">“</span>
+                  {t}
+                  <span className="text-neon-purple ml-1">”</span>
                 </span>
               ))}
             </div>
           ))}
         </div>
-        <div className="flex gap-3 animate-marquee whitespace-nowrap" style={{ animationDirection: "reverse", animationDuration: "35s" }}>
+        <div
+          className="flex gap-3 animate-marquee whitespace-nowrap"
+          style={{ animationDirection: "reverse", animationDuration: "35s" }}
+        >
           {[...Array(8)].map((_, dup) => (
             <div key={`r-${dup}`} className="flex gap-3 shrink-0">
               {[
@@ -161,7 +196,10 @@ export function Hero() {
                 "How do I suggest they should buy this piece?",
                 "Which look closes the sale?",
               ].map((t, i) => (
-                <span key={i} className="shrink-0 px-5 py-2.5 rounded-full bg-glass ring-glass shadow-soft text-sm text-foreground/70 font-medium">
+                <span
+                  key={i}
+                  className="shrink-0 px-5 py-2.5 rounded-full bg-glass ring-glass shadow-soft text-sm text-foreground/70 font-medium"
+                >
                   {t}
                 </span>
               ))}

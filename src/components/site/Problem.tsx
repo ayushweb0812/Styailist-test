@@ -1,7 +1,15 @@
 import { motion, useInView, useMotionValue, animate } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-function Counter({ to, decimals = 0, suffix = "%" }: { to: number; decimals?: number; suffix?: string }) {
+function Counter({
+  to,
+  decimals = 0,
+  suffix = "%",
+}: {
+  to: number;
+  decimals?: number;
+  suffix?: string;
+}) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
   const mv = useMotionValue(0);
@@ -10,7 +18,9 @@ function Counter({ to, decimals = 0, suffix = "%" }: { to: number; decimals?: nu
     const c = animate(mv, to, {
       duration: 1.8,
       ease: [0.22, 1, 0.36, 1],
-      onUpdate: (v) => { if (ref.current) ref.current.textContent = v.toFixed(decimals); },
+      onUpdate: (v) => {
+        if (ref.current) ref.current.textContent = v.toFixed(decimals);
+      },
     });
     return c.stop;
   }, [inView, to, decimals, mv]);
@@ -23,9 +33,28 @@ function Counter({ to, decimals = 0, suffix = "%" }: { to: number; decimals?: nu
 }
 
 const stats = [
-  { value: 96, suffix: "%", label: "of shoppers leave without buying", tag: "Customers Leaving", visual: "bounce" },
-  { value: 1.8, suffix: "%", decimals: 1, label: "average fashion site conversion rate", tag: "High Bounce Rate", visual: "bar" },
-  { value: 30, suffix: "%", label: "of purchases are returned", tag: "Cart Abandonment", visual: "ring" },
+  {
+    value: 96,
+    suffix: "%",
+    label: "of shoppers leave without buying",
+    tag: "Customers Leaving",
+    visual: "bounce",
+  },
+  {
+    value: 1.8,
+    suffix: "%",
+    decimals: 1,
+    label: "average fashion site conversion rate",
+    tag: "High Bounce Rate",
+    visual: "bar",
+  },
+  {
+    value: 30,
+    suffix: "%",
+    label: "of purchases are returned",
+    tag: "Cart Abandonment",
+    visual: "ring",
+  },
 ];
 
 export function Problem() {
@@ -36,20 +65,24 @@ export function Problem() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-12 gap-8 items-end mb-14">
           <div className="md:col-span-7">
-            <span className="text-[11px] uppercase tracking-[0.25em] text-foreground/55 font-medium">— The problem —</span>
+            <span className="text-[11px] uppercase tracking-[0.25em] text-foreground/55 font-medium">
+              — The problem —
+            </span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="font-serif text-4xl md:text-6xl font-normal tracking-tight mt-4 leading-[1.02] text-balance"
             >
-              They didn't want fewer products.<br />
+              They didn't want fewer products.
+              <br />
               <span className="text-gradient-primary">They wanted theirs.</span>
             </motion.h2>
           </div>
           <div className="md:col-span-4 md:col-start-9">
             <p className="text-foreground/65 leading-relaxed">
-              They wanted that one product your website is still waiting to show them — buried under 4,000 others that aren't.
+              They wanted that one product your website is still waiting to show them — buried under
+              4,000 others that aren't.
             </p>
           </div>
         </div>
@@ -65,8 +98,12 @@ export function Problem() {
               className="rounded-3xl bg-glass ring-glass shadow-card p-8 hover:shadow-glass transition-all hover:-translate-y-1"
             >
               <div className="flex items-start justify-between mb-6">
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/40">0{i + 1} / 03</span>
-                <span className="text-[10px] font-medium uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary-soft text-primary">{s.tag}</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/40">
+                  0{i + 1} / 03
+                </span>
+                <span className="text-[10px] font-medium uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary-soft text-primary">
+                  {s.tag}
+                </span>
               </div>
               <StatVisual kind={s.visual as "bounce" | "bar" | "ring"} />
               <div className="mt-8">
@@ -89,20 +126,39 @@ export function Problem() {
           <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-neon-purple/30 blur-3xl" />
           <div className="relative grid md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-7">
-              <span className="text-[11px] uppercase tracking-[0.25em] text-background/55 font-medium">— The solution —</span>
+              <span className="text-[11px] uppercase tracking-[0.25em] text-background/55 font-medium">
+                — The solution —
+              </span>
               <h3 className="font-serif text-3xl md:text-5xl font-normal mt-4 leading-[1.02]">
-                Your catalogue<br />
+                Your catalogue
+                <br />
                 <span className="text-gradient-primary">just got a brain.</span>
               </h3>
               <p className="text-background/70 mt-5 max-w-md leading-relaxed">
-                Styailist reads every shopper. Understands their style. Shows them exactly what's theirs.
+                Styailist reads every shopper. Understands their style. Shows them exactly what's
+                theirs.
               </p>
             </div>
             <div className="md:col-span-5 grid gap-2.5">
               {[
-                { t: "Color Analysis", d: "Scans your catalogue for each shopper's unique palette", c: "var(--neon-pink)", emoji: "🎨" },
-                { t: "Body Analysis", d: "Finds their body type and the cuts that match", c: "var(--neon-purple)", emoji: "👗" },
-                { t: "Blend", d: "Add a place they're shopping for — we find the combination", c: "var(--sage)", emoji: "✨" },
+                {
+                  t: "Color Analysis",
+                  d: "Scans your catalogue for each shopper's unique palette",
+                  c: "var(--neon-pink)",
+                  emoji: "🎨",
+                },
+                {
+                  t: "Body Analysis",
+                  d: "Finds their body type and the cuts that match",
+                  c: "var(--neon-purple)",
+                  emoji: "👗",
+                },
+                {
+                  t: "Blend",
+                  d: "Add a place they're shopping for — we find the combination",
+                  c: "var(--sage)",
+                  emoji: "✨",
+                },
               ].map((c, i) => (
                 <motion.div
                   key={c.t}
@@ -113,7 +169,12 @@ export function Problem() {
                   transition={{ delay: 0.3 + i * 0.1 }}
                   className="flex items-center gap-4 p-4 rounded-2xl bg-background/5 backdrop-blur ring-1 ring-background/10 hover:bg-background/10 transition-colors"
                 >
-                  <div className="w-11 h-11 rounded-xl shrink-0 shadow-inner flex items-center justify-center text-lg" style={{ background: c.c }}>{c.emoji}</div>
+                  <div
+                    className="w-11 h-11 rounded-xl shrink-0 shadow-inner flex items-center justify-center text-lg"
+                    style={{ background: c.c }}
+                  >
+                    {c.emoji}
+                  </div>
                   <div className="flex-1">
                     <p className="font-medium">{c.t}</p>
                     <p className="text-xs text-background/60 mt-0.5">{c.d}</p>
@@ -134,9 +195,15 @@ function StatVisual({ kind }: { kind: "bounce" | "bar" | "ring" }) {
     return (
       <div className="h-24 relative flex items-center justify-center">
         {[0, 1, 2].map((i) => (
-          <div key={i} className="absolute rounded-full ring-1 ring-neon-pink/40 animate-pulse-ring" style={{ width: 100, height: 100, animationDelay: `${i * 0.6}s` }} />
+          <div
+            key={i}
+            className="absolute rounded-full ring-1 ring-neon-pink/40 animate-pulse-ring"
+            style={{ width: 100, height: 100, animationDelay: `${i * 0.6}s` }}
+          />
         ))}
-        <div className="relative font-mono text-[10px] uppercase tracking-[0.2em] rounded-full bg-ink text-background px-3 py-1.5">Bounce</div>
+        <div className="relative font-mono text-[10px] uppercase tracking-[0.2em] rounded-full bg-ink text-background px-3 py-1.5">
+          Bounce
+        </div>
       </div>
     );
   }
@@ -167,8 +234,13 @@ function StatVisual({ kind }: { kind: "bounce" | "bar" | "ring" }) {
         </defs>
         <circle cx="60" cy="60" r="48" stroke="oklch(0.93 0.04 320)" strokeWidth="10" fill="none" />
         <motion.circle
-          cx="60" cy="60" r="48"
-          stroke="url(#ring-grad)" strokeWidth="10" fill="none" strokeLinecap="round"
+          cx="60"
+          cy="60"
+          r="48"
+          stroke="url(#ring-grad)"
+          strokeWidth="10"
+          fill="none"
+          strokeLinecap="round"
           strokeDasharray={2 * Math.PI * 48}
           initial={{ strokeDashoffset: 2 * Math.PI * 48 }}
           whileInView={{ strokeDashoffset: 2 * Math.PI * 48 * 0.7 }}
@@ -176,7 +248,9 @@ function StatVisual({ kind }: { kind: "bounce" | "bar" | "ring" }) {
           transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
           transform="rotate(-90 60 60)"
         />
-        <text x="60" y="68" textAnchor="middle" className="fill-ink font-display" fontSize="22">↺</text>
+        <text x="60" y="68" textAnchor="middle" className="fill-ink font-display" fontSize="22">
+          ↺
+        </text>
       </svg>
     </div>
   );

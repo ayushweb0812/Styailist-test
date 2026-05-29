@@ -9,7 +9,7 @@ export function LeadModal({ children }: { children: React.ReactNode }) {
 
   // We only want to trigger the lazy load when the dialog is opened (or hovered, but let's stick to open for simplicity)
   // Radix Dialog handles its own rendering of content when open
-  
+
   const handleOpenChange = (newOpen: boolean) => {
     setOpen(newOpen);
     if (newOpen && !shouldRender) {

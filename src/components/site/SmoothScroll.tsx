@@ -6,7 +6,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export function SmoothScroll({ children }: { children: ReactNode }) {
-  const lenisRef = useRef<any>(null);
+  const lenisRef = useRef<unknown>(null);
 
   useEffect(() => {
     function update(time: number) {

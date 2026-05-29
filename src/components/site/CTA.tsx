@@ -11,20 +11,30 @@ export function CTA() {
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
         className="max-w-7xl mx-auto rounded-[2.5rem] px-8 py-20 md:py-28 text-center relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, oklch(0.96 0.04 340), oklch(0.97 0.02 310) 45%, oklch(0.94 0.05 270))" }}
+        style={{
+          background:
+            "linear-gradient(135deg, oklch(0.96 0.04 340), oklch(0.97 0.02 310) 45%, oklch(0.94 0.05 270))",
+        }}
       >
         <div className="absolute inset-0 noise opacity-20" />
         <div className="absolute -top-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-neon-pink/15 blur-3xl animate-blob" />
-        <div className="absolute -bottom-32 -right-32 w-[28rem] h-[28rem] rounded-full bg-neon-purple/15 blur-3xl animate-blob" style={{ animationDelay: "-8s" }} />
+        <div
+          className="absolute -bottom-32 -right-32 w-[28rem] h-[28rem] rounded-full bg-neon-purple/15 blur-3xl animate-blob"
+          style={{ animationDelay: "-8s" }}
+        />
 
         <div className="relative">
-          <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/60">— Ready when you are —</span>
+          <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/60">
+            — Ready when you are —
+          </span>
           <h2 className="font-serif font-normal tracking-tight text-ink mt-4 leading-[1]">
             <span className="text-5xl md:text-7xl">Book a demo</span>
             <br />
             <span
               className="bg-clip-text text-transparent text-6xl md:text-8xl"
-              style={{ backgroundImage: "linear-gradient(90deg, #f8a8c8 0%, #d98ad6 50%, #a06bd8 100%)" }}
+              style={{
+                backgroundImage: "linear-gradient(90deg, #f8a8c8 0%, #d98ad6 50%, #a06bd8 100%)",
+              }}
             >
               no credit card required.
             </span>
@@ -42,7 +52,9 @@ export function CTA() {
               </button>
             </LeadModal>
           </div>
-          <p className="mt-6 text-xs font-mono uppercase tracking-[0.2em] text-ink/50">No card required · cancel anytime</p>
+          <p className="mt-6 text-xs font-mono uppercase tracking-[0.2em] text-ink/50">
+            No card required · cancel anytime
+          </p>
         </div>
       </motion.div>
     </section>

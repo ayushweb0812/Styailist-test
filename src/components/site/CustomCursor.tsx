@@ -11,12 +11,7 @@ interface Particle {
   color: string;
 }
 
-const colors = [
-  "text-neon-pink",
-  "text-neon-purple",
-  "text-primary",
-  "text-rose",
-];
+const colors = ["text-neon-pink", "text-neon-purple", "text-primary", "text-rose"];
 
 // A custom, premium 4-point star SVG instead of the default Lucide icon
 const StarSparkle = ({ size, className = "" }: { size: number; className?: string }) => (
@@ -74,10 +69,10 @@ export function CustomCursor() {
       const target = e.target as HTMLElement;
       if (target.closest("a") || target.closest("button") || target.closest("[role='button']")) {
         setIsClicking(true);
-        
+
         // Spawn burst particles
         const burstParticles: Particle[] = Array.from({ length: 8 }).map((_, i) => {
-          const angle = (i * Math.PI * 2) / 8 + (Math.random() * 0.5);
+          const angle = (i * Math.PI * 2) / 8 + Math.random() * 0.5;
           const distance = 40 + Math.random() * 40; // 40 to 80px burst radius
           return {
             id: particleId++,
@@ -89,7 +84,7 @@ export function CustomCursor() {
             color: colors[Math.floor(Math.random() * colors.length)],
           };
         });
-        
+
         setParticles((prev) => [...prev.slice(-20), ...burstParticles]);
       }
     };
@@ -134,7 +129,7 @@ export function CustomCursor() {
           cursor: none !important;
         }
       `}</style>
-      
+
       {/* Main Cursor */}
       <motion.div
         className="pointer-events-none fixed left-0 top-0 z-[9999] text-primary"
@@ -143,10 +138,10 @@ export function CustomCursor() {
           y: mousePosition.y - 12,
           scale: isClicking ? 0.8 : isHovering ? 1.5 : 1,
         }}
-        transition={{ 
+        transition={{
           x: { duration: 0 },
           y: { duration: 0 },
-          scale: { type: "spring", stiffness: 400, damping: 25 }
+          scale: { type: "spring", stiffness: 400, damping: 25 },
         }}
       >
         <motion.div
@@ -163,10 +158,22 @@ export function CustomCursor() {
           <motion.div
             key={p.id}
             className={`pointer-events-none fixed left-0 top-0 z-[9998] ${p.color}`}
-            initial={{ opacity: 0.8, scale: 1, x: p.x - p.size / 2, y: p.y - p.size / 2, rotate: 0 }}
+            initial={{
+              opacity: 0.8,
+              scale: 1,
+              x: p.x - p.size / 2,
+              y: p.y - p.size / 2,
+              rotate: 0,
+            }}
             animate={
               p.targetX !== undefined
-                ? { opacity: 0, scale: 0, x: p.targetX - p.size / 2, y: p.targetY! - p.size / 2, rotate: 180 }
+                ? {
+                    opacity: 0,
+                    scale: 0,
+                    x: p.targetX - p.size / 2,
+                    y: p.targetY! - p.size / 2,
+                    rotate: 180,
+                  }
                 : { opacity: 0, scale: 0, y: p.y + 20, rotate: 180 }
             }
             exit={{ opacity: 0, scale: 0 }}

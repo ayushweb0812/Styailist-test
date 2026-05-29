@@ -6,19 +6,32 @@ export function Footer() {
       <div className="max-w-7xl mx-auto relative">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <a href="/" className="inline-flex items-center gap-2.5 group">
-            <img src="/Styailist- Transparent.svg" alt="Styailist Logo" className="h-8 w-auto group-hover:scale-105 transition-transform" />
+            <img
+              src="/Styailist- Transparent.svg"
+              alt="Styailist Logo"
+              className="h-8 w-auto group-hover:scale-105 transition-transform"
+            />
             <span className="font-display text-lg font-semibold text-background">
               Styailist<span className="text-primary">.</span>
             </span>
           </a>
 
           <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-            <a href="mailto:contact@styailist.com" className="hover:text-background transition-colors">
+            <a
+              href="mailto:contact@styailist.com"
+              className="hover:text-background transition-colors"
+            >
               contact@styailist.com
             </a>
-            <a href="#" className="hover:text-background transition-colors">Contact us</a>
-            <a href="/privacy" className="hover:text-background transition-colors">Privacy policy</a>
-            <a href="/terms" className="hover:text-background transition-colors">Terms</a>
+            <a href="#" className="hover:text-background transition-colors">
+              Contact us
+            </a>
+            <a href="/privacy" className="hover:text-background transition-colors">
+              Privacy policy
+            </a>
+            <a href="/terms" className="hover:text-background transition-colors">
+              Terms
+            </a>
           </nav>
         </div>
 

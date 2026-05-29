@@ -15,8 +15,7 @@ const stepCopy: Record<Step, { title: React.ReactNode; subtitle: string }> = {
   1: {
     title: (
       <>
-        Let's set up your{" "}
-        <span className="text-gradient-primary">account</span>
+        Let's set up your <span className="text-gradient-primary">account</span>
       </>
     ),
     subtitle: "Enter your credentials to get started.",
@@ -24,8 +23,7 @@ const stepCopy: Record<Step, { title: React.ReactNode; subtitle: string }> = {
   2: {
     title: (
       <>
-        Tell us about your{" "}
-        <span className="text-gradient-primary">brand</span>
+        Tell us about your <span className="text-gradient-primary">brand</span>
       </>
     ),
     subtitle: "A few details so we can personalise your experience.",
@@ -39,7 +37,7 @@ const slideVariants = {
 };
 
 export default function LeadModalContent({
-  onCloseAnimationEnd
+  onCloseAnimationEnd,
 }: {
   onCloseAnimationEnd?: () => void;
 }) {
@@ -115,7 +113,10 @@ export default function LeadModalContent({
   const progressPercent = ((step - 1) / (TOTAL_STEPS - 1)) * 100;
 
   return (
-    <DialogContent className="w-[calc(100%-2rem)] sm:w-full sm:max-w-lg p-0 overflow-hidden border-0 rounded-3xl" onAnimationEnd={onCloseAnimationEnd}>
+    <DialogContent
+      className="w-[calc(100%-2rem)] sm:w-full sm:max-w-lg p-0 overflow-hidden border-0 rounded-3xl"
+      onAnimationEnd={onCloseAnimationEnd}
+    >
       {!submitted ? (
         <>
           {/* ── Progress bar (top edge) ── */}
@@ -248,7 +249,9 @@ export default function LeadModalContent({
                           placeholder="STYLE2026"
                           className="w-full h-12 px-4 rounded-xl bg-white/50 border border-foreground/10 focus:outline-none focus:ring-2 focus:ring-neon-pink focus:border-transparent transition-all text-ink placeholder:text-foreground/40"
                         />
-                        <p className="text-[11px] text-foreground/50 pl-1">Optional — enter if you have one</p>
+                        <p className="text-[11px] text-foreground/50 pl-1">
+                          Optional — enter if you have one
+                        </p>
                       </div>
 
                       {/* Message */}
@@ -282,7 +285,12 @@ export default function LeadModalContent({
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground/60 hover:text-ink transition-colors"
                 >
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
                   </svg>
                   Back
                 </button>
@@ -293,16 +301,28 @@ export default function LeadModalContent({
               <button
                 type="submit"
                 disabled={!canProceed(step) || loading}
-                className={`group inline-flex items-center gap-2 rounded-full pl-6 pr-2 py-2 text-sm font-medium transition-all outline-none disabled:opacity-40 disabled:cursor-not-allowed ${step === 2
+                className={`group inline-flex items-center gap-2 rounded-full pl-6 pr-2 py-2 text-sm font-medium transition-all outline-none disabled:opacity-40 disabled:cursor-not-allowed ${
+                  step === 2
                     ? "bg-gradient-to-r from-neon-pink to-neon-purple text-white hover:shadow-glow"
                     : "bg-ink text-background hover:shadow-glow"
-                  }`}
+                }`}
               >
                 {loading ? (
                   <span className="flex items-center gap-2">
                     <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      />
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                      />
                     </svg>
                     Submitting…
                   </span>
@@ -312,10 +332,9 @@ export default function LeadModalContent({
                   "Continue"
                 )}
                 <span
-                  className={`w-8 h-8 rounded-full flex items-center justify-center text-xs group-hover:rotate-45 transition-transform ${step === 2
-                      ? "bg-white/20 text-white"
-                      : "bg-background text-ink"
-                    }`}
+                  className={`w-8 h-8 rounded-full flex items-center justify-center text-xs group-hover:rotate-45 transition-transform ${
+                    step === 2 ? "bg-white/20 text-white" : "bg-background text-ink"
+                  }`}
                 >
                   <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
                 </span>
@@ -344,14 +363,18 @@ export default function LeadModalContent({
         >
           <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-100 to-green-200 text-green-600 flex items-center justify-center mx-auto mb-6">
             <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={3}
+                d="M5 13l4 4L19 7"
+              />
             </svg>
           </div>
-          <h3 className="font-display text-2xl font-semibold text-ink">
-            You're all set!
-          </h3>
+          <h3 className="font-display text-2xl font-semibold text-ink">You're all set!</h3>
           <p className="text-foreground/70 text-base max-w-sm mx-auto">
-            We'll be in touch shortly to get your store set up with Styailist. Check your inbox for next steps.
+            We'll be in touch shortly to get your store set up with Styailist. Check your inbox for
+            next steps.
           </p>
           <div className="pt-2">
             <span className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-foreground/50">

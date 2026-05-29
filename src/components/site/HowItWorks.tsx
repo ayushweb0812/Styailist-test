@@ -1,9 +1,24 @@
 import { motion } from "framer-motion";
 
 const steps = [
-  { n: "01", t: "Paste one snippet", d: "Your store. Your fonts. Your colours. Styailist blends in like it was always there. Shopify, Woo, Magento, Webflow, Wix.", icon: "</>" },
-  { n: "02", t: "Shoppers meet their stylist", d: "A 5-exchange conversation that feels nothing like a form. They leave with a Style Passport. You leave with a profile.", icon: "✦" },
-  { n: "03", t: "Catalogue works harder", d: "Every visit after that is personalised. Right products, right person, every time. Returns drop. AOV climbs.", icon: "↗" },
+  {
+    n: "01",
+    t: "Paste one snippet",
+    d: "Your store. Your fonts. Your colours. Styailist blends in like it was always there. Shopify, Woo, Magento, Webflow, Wix.",
+    icon: "</>",
+  },
+  {
+    n: "02",
+    t: "Shoppers meet their stylist",
+    d: "A 5-exchange conversation that feels nothing like a form. They leave with a Style Passport. You leave with a profile.",
+    icon: "✦",
+  },
+  {
+    n: "03",
+    t: "Catalogue works harder",
+    d: "Every visit after that is personalised. Right products, right person, every time. Returns drop. AOV climbs.",
+    icon: "↗",
+  },
 ];
 
 export function HowItWorks() {
@@ -14,7 +29,9 @@ export function HowItWorks() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-12 gap-8 items-end mb-14">
           <div className="md:col-span-7">
-            <span className="text-[11px] uppercase tracking-[0.25em] text-foreground/55 font-medium">— How it works —</span>
+            <span className="text-[11px] uppercase tracking-[0.25em] text-foreground/55 font-medium">
+              — How it works —
+            </span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -33,10 +50,17 @@ export function HowItWorks() {
         </div>
 
         <div className="relative">
-          <svg viewBox="0 0 1200 280" className="absolute inset-0 w-full h-full hidden md:block pointer-events-none -z-10" preserveAspectRatio="none">
+          <svg
+            viewBox="0 0 1200 280"
+            className="absolute inset-0 w-full h-full hidden md:block pointer-events-none -z-10"
+            preserveAspectRatio="none"
+          >
             <motion.path
               d="M 100 200 Q 350 0 600 140 T 1100 80"
-              stroke="url(#grad-how)" strokeWidth="2" fill="none" strokeDasharray="2 6"
+              stroke="url(#grad-how)"
+              strokeWidth="2"
+              fill="none"
+              strokeDasharray="2 6"
               initial={{ pathLength: 0 }}
               whileInView={{ pathLength: 1 }}
               viewport={{ once: true }}
@@ -69,7 +93,9 @@ export function HowItWorks() {
                       {s.icon}
                     </div>
                   </div>
-                  <h3 className="font-display text-2xl md:text-3xl font-medium mt-8 leading-tight">{s.t}</h3>
+                  <h3 className="font-display text-2xl md:text-3xl font-medium mt-8 leading-tight">
+                    {s.t}
+                  </h3>
                   <p className="text-sm text-foreground/65 mt-3 leading-relaxed">{s.d}</p>
                 </div>
               </motion.div>
