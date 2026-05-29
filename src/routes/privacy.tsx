@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import React, { Suspense } from "react";
 import { Nav } from "@/components/site/Nav";
-import { Footer } from "@/components/site/Footer";
+import { SectionLoader } from "@/components/ui/section-loader";
+
+const Footer = React.lazy(() => import("@/components/site/Footer").then(m => ({ default: m.Footer })));
 
 export const Route = createFileRoute("/privacy")({
   component: Privacy,
@@ -114,7 +117,9 @@ function Privacy() {
           </div>
         </div>
       </div>
-      <Footer />
+      <Suspense fallback={<SectionLoader />}>
+        <Footer />
+      </Suspense>
     </main>
   );
 }

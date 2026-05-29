@@ -149,7 +149,12 @@ export function CustomCursor() {
           scale: { type: "spring", stiffness: 400, damping: 25 }
         }}
       >
-        <StarSparkle size={24} className="animate-pulse" />
+        <motion.div
+          animate={{ rotate: [0, 90, 180, 270, 360], scale: [1, 1.15, 1, 1.15, 1] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+        >
+          <StarSparkle size={24} className="drop-shadow-[0_0_8px_rgba(255,105,180,0.6)]" />
+        </motion.div>
       </motion.div>
 
       {/* Trailing and Burst Particles */}
