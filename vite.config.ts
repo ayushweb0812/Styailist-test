@@ -7,19 +7,15 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  cloudflare: false, // Disables the forced Cloudflare worker build to allow standard Node/Vercel output
-  vite: {
-    build: {
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            'react-vendor': ['react', 'react-dom'],
-            'tanstack-vendor': ['@tanstack/react-router', '@tanstack/react-start'],
-            'framer-motion': ['framer-motion'],
-            'lucide': ['lucide-react'],
-          }
-        }
-      }
-    }
-  }
+  cloudflare: false,
+  tanstackStart: {
+    spa: {
+      enabled: true,
+    },
+    prerender: {
+      enabled: true,
+      crawlLinks: true,
+    },
+  },
 });
+
