@@ -155,7 +155,7 @@ export function Problem() {
                 },
                 {
                   t: "Blend",
-                  d: "Add a place they're shopping for — we find the combination",
+                  d: "Add a piece they're shopping for — we find the combination",
                   c: "var(--sage)",
                   emoji: "✨",
                 },

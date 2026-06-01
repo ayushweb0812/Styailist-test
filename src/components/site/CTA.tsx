@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { LeadModal } from "./LeadModal";
+
 
 export function CTA() {
   return (
@@ -43,14 +43,17 @@ export function CTA() {
             Join 1,200+ fashion brands giving every shopper a personal stylist.
           </p>
           <div className="mt-10 flex items-center justify-center gap-3 flex-wrap">
-            <LeadModal>
-              <button className="group inline-flex items-center gap-2 rounded-full bg-ink text-white pl-6 pr-2 py-2 text-base font-medium hover:scale-[1.02] transition-transform outline-none">
-                Book a demo
-                <span className="w-9 h-9 rounded-full bg-white text-ink flex items-center justify-center group-hover:rotate-45 transition-transform">
-                  <ArrowRight size={16} strokeWidth={2.5} />
-                </span>
-              </button>
-            </LeadModal>
+            <a
+              href="https://calendly.com/sanyogita-sghsglobal/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-full bg-ink text-white pl-6 pr-2 py-2 text-base font-medium hover:scale-[1.02] transition-transform outline-none"
+            >
+              Book a demo
+              <span className="w-9 h-9 rounded-full bg-white text-ink flex items-center justify-center group-hover:rotate-45 transition-transform">
+                <ArrowRight size={16} strokeWidth={2.5} />
+              </span>
+            </a>
           </div>
           <p className="mt-6 text-xs font-mono uppercase tracking-[0.2em] text-ink/50">
             No card required · cancel anytime

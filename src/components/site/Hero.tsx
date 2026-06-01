@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { LeadModal } from "./LeadModal";
 
 export function Hero() {
   return (
@@ -46,7 +45,7 @@ export function Hero() {
           }}
           className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-balance text-ink mt-8 max-w-5xl mx-auto"
         >
-          {["Your", "customer's", "perfect", "outfit", "is", ""].map((word, i) => (
+          {["Your", "customer's", "perfect", "outfit", "is"].map((word, i) => (
             <motion.span
               key={`h1-${i}`}
               variants={{
@@ -139,12 +138,15 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.55 }}
           className="flex flex-wrap items-center justify-center gap-3 mt-9"
         >
-          <LeadModal>
-            <button className="h-12 px-7 rounded-full bg-gradient-to-r from-neon-pink to-neon-purple text-white font-medium text-sm flex items-center gap-2 hover:shadow-glow hover:scale-[1.02] transition-all active:scale-[0.98] outline-none">
-              Book a demo
-              <span>✨</span>
-            </button>
-          </LeadModal>
+          <a
+            href="https://calendly.com/sanyogita-sghsglobal/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="h-12 px-7 rounded-full bg-gradient-to-r from-neon-pink to-neon-purple text-white font-medium text-sm flex items-center gap-2 hover:shadow-glow hover:scale-[1.02] transition-all active:scale-[0.98] outline-none"
+          >
+            Book a demo
+            <span>✨</span>
+          </a>
         </motion.div>
       </div>
 

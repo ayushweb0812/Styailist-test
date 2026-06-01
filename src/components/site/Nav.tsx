@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { LeadModal } from "./LeadModal";
 
 const links = [
   { label: "Home", href: "/" },
@@ -55,14 +54,17 @@ export function Nav() {
           >
             Sign Up
           </a>
-          <LeadModal>
-            <button className="group inline-flex items-center gap-2 rounded-full bg-ink text-background pl-4 pr-1.5 py-1.5 text-sm font-medium hover:shadow-glow transition-all outline-none">
-              Book a demo
-              <span className="w-7 h-7 rounded-full bg-background text-ink flex items-center justify-center group-hover:rotate-45 transition-transform">
-                <ArrowRight size={14} strokeWidth={2.5} />
-              </span>
-            </button>
-          </LeadModal>
+          <a
+            href="https://calendly.com/sanyogita-sghsglobal/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 rounded-full bg-ink text-background pl-4 pr-1.5 py-1.5 text-sm font-medium hover:shadow-glow transition-all outline-none"
+          >
+            Book a demo
+            <span className="w-7 h-7 rounded-full bg-background text-ink flex items-center justify-center group-hover:rotate-45 transition-transform">
+              <ArrowRight size={14} strokeWidth={2.5} />
+            </span>
+          </a>
         </div>
       </div>
     </motion.header>
