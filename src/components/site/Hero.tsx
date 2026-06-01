@@ -46,7 +46,7 @@ export function Hero() {
           }}
           className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-balance text-ink mt-8 max-w-5xl mx-auto"
         >
-          {"Your customer's outfit is ".split(" ").map((word, i) => (
+          {["Your", "customer's", "perfect", "outfit", "is", ""].map((word, i) => (
             <motion.span
               key={`h1-${i}`}
               variants={{
@@ -57,7 +57,7 @@ export function Hero() {
                   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
                 },
               }}
-              className="inline-block mr-[0.25em]"
+              className={`inline-block mr-[0.25em] ${word === "perfect" ? "text-gradient-primary" : ""}`}
             >
               {word}
             </motion.span>
