@@ -71,22 +71,9 @@ export function Hero() {
                 transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
               },
             }}
-            className="inline-block text-gradient-primary py-2"
+            className="inline-block py-2"
           >
-            hiding in your catalogue
-          </motion.span>
-          <motion.span
-            variants={{
-              hidden: { opacity: 0, y: 18 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-              },
-            }}
-            className="inline-block"
-          >
-            .
+            <span className="text-gradient-primary">hiding in your catalogue</span>.
           </motion.span>
         </motion.h1>
 

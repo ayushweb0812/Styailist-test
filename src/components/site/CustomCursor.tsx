@@ -33,13 +33,23 @@ export function CustomCursor() {
   const [isClient, setIsClient] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
+    
+    const checkMobile = () => {
+      setIsMobile(window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 1024);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
     let particleId = 0;
 
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
+      setIsVisible(true);
 
       // Add trailing particle on movement
       if (Math.random() > 0.3) {
@@ -55,6 +65,9 @@ export function CustomCursor() {
         ]);
       }
     };
+
+    const handleMouseLeave = () => setIsVisible(false);
+    const handleMouseEnter = () => setIsVisible(true);
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -97,12 +110,19 @@ export function CustomCursor() {
     window.addEventListener("mouseover", handleMouseOver);
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
+    
+    document.addEventListener("mouseleave", handleMouseLeave);
+    document.addEventListener("mouseenter", handleMouseEnter);
 
     return () => {
+      window.removeEventListener("resize", checkMobile);
       window.removeEventListener("mousemove", updateMousePosition);
       window.removeEventListener("mouseover", handleMouseOver);
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
+      
+      document.removeEventListener("mouseleave", handleMouseLeave);
+      document.removeEventListener("mouseenter", handleMouseEnter);
     };
   }, []);
 
@@ -120,7 +140,7 @@ export function CustomCursor() {
     return () => clearInterval(interval);
   }, [particles]);
 
-  if (!isClient) return null;
+  if (!isClient || isMobile) return null;
 
   return (
     <>
@@ -137,11 +157,13 @@ export function CustomCursor() {
           x: mousePosition.x - 12,
           y: mousePosition.y - 12,
           scale: isClicking ? 0.8 : isHovering ? 1.5 : 1,
+          opacity: isVisible ? 1 : 0,
         }}
         transition={{
           x: { duration: 0 },
           y: { duration: 0 },
           scale: { type: "spring", stiffness: 400, damping: 25 },
+          opacity: { duration: 0.15 },
         }}
       >
         <motion.div

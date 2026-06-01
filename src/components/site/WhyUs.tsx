@@ -57,7 +57,7 @@ export function WhyUs() {
               transition={{ delay: i * 0.1, duration: 0.6 }}
               className="group rounded-3xl bg-glass-strong ring-glass shadow-card p-8 hover:shadow-glass transition-all hover:-translate-y-1"
             >
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-4">
                 <div>
                   <h3 className="font-display text-xl md:text-2xl font-semibold leading-tight">
                     {r.title}
@@ -66,7 +66,7 @@ export function WhyUs() {
                     {r.body}
                   </p>
                 </div>
-                <div className="shrink-0 text-right">
+                <div className="shrink-0 md:text-right">
                   <div className="font-display text-3xl md:text-4xl font-semibold text-gradient-primary tabular-nums">
                     {r.stat}
                   </div>
