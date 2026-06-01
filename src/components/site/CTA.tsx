@@ -28,7 +28,7 @@ export function CTA() {
             — Ready when you are —
           </span>
           <h2 className="font-serif font-normal tracking-tight text-ink mt-4 leading-[1]">
-            <span className="text-5xl md:text-7xl">Book a demo</span>
+            <span className="text-4xl md:text-5xl">Book a demo</span>
             <br />
             <span
               className="bg-clip-text text-transparent text-6xl md:text-8xl"
