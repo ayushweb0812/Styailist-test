@@ -276,7 +276,7 @@ function PricingPage() {
             <div className="bg-white/80 rounded-[2rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hidden md:block">
               {featureData.map((cat, catIdx) => (
                 <div key={cat.category} className={catIdx !== 0 ? "mt-10" : ""}>
-                  <div className={`flex flex-col justify-end border-b border-foreground/10 pb-2 mb-4 ${HEADER_HEIGHT}`}>
+                  <div className={`flex flex-col justify-end border-b border-foreground/20 pb-2 mb-4 ${HEADER_HEIGHT}`}>
                     <h4 className="font-semibold text-[13px] text-ink">{cat.category}</h4>
                   </div>
                   <div className="flex flex-col gap-3">
@@ -329,10 +329,10 @@ function PricingPage() {
               {featureData.map((cat, catIdx) => (
                 <div key={cat.category} className={catIdx !== 0 ? "mt-10 relative" : "relative"}>
                   {catIdx !== 0 && (
-                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-px bg-foreground/10" />
+                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-px bg-foreground/20" />
                   )}
                   {/* Mobile Header */}
-                  <div className="md:hidden flex flex-col justify-end border-b border-foreground/10 pb-2 mb-4">
+                  <div className="md:hidden flex flex-col justify-end border-b border-foreground/20 pb-2 mb-4">
                     <h4 className="font-semibold text-[13px] text-ink">{cat.category}</h4>
                   </div>
                   <div className={`hidden md:flex flex-col justify-end pb-2 mb-4 ${HEADER_HEIGHT}`} />
@@ -354,10 +354,10 @@ function PricingPage() {
               {featureData.map((cat, catIdx) => (
                 <div key={cat.category} className={catIdx !== 0 ? "mt-10 relative" : "relative"}>
                   {catIdx !== 0 && (
-                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-px bg-foreground/10" />
+                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-px bg-foreground/20" />
                   )}
                   {/* Mobile Header */}
-                  <div className="md:hidden flex flex-col justify-end border-b border-foreground/10 pb-2 mb-4">
+                  <div className="md:hidden flex flex-col justify-end border-b border-foreground/20 pb-2 mb-4">
                     <h4 className="font-semibold text-[13px] text-ink">{cat.category}</h4>
                   </div>
                   <div className={`hidden md:flex flex-col justify-end pb-2 mb-4 ${HEADER_HEIGHT}`} />
