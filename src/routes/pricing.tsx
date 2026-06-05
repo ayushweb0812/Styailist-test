@@ -36,7 +36,7 @@ const plans = [
   {
     name: "Enterprise",
     desc: "Custom pricing for multi-brand or enterprise retailers",
-    price: { monthly: "Negotiated", annual: "Negotiated" },
+    price: { monthly: "Custom", annual: "Custom" },
     cta: "Talk to sales",
     popular: false,
     save: "Save 75%",
@@ -180,7 +180,7 @@ function PricingPage() {
             className="hidden md:flex bg-white rounded-[2rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] items-start"
           >
             <h3 className="font-display text-[1.65rem] font-medium leading-[1.1] text-ink mt-2">
-              Choose your<br />plan
+              Start your<br />Free Trial
             </h3>
           </motion.div>
 
@@ -195,13 +195,13 @@ function PricingPage() {
               style={
                 p.popular
                   ? {
-                      background: "linear-gradient(160deg, #2A1144 0%, #150624 100%)",
-                      boxShadow: "0 20px 50px rgba(192,132,252,.15)",
-                    }
+                    background: "linear-gradient(160deg, #2A1144 0%, #150624 100%)",
+                    boxShadow: "0 20px 50px rgba(192,132,252,.15)",
+                  }
                   : {
-                      background: "rgba(255,255,255,1)",
-                      boxShadow: "0 4px 20px rgba(0,0,0,0.02)",
-                    }
+                    background: "rgba(255,255,255,1)",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.02)",
+                  }
               }
             >
               {p.popular && (
@@ -218,7 +218,7 @@ function PricingPage() {
                   Most popular
                 </div>
               )}
-              
+
               <div className="relative flex-1 flex flex-col">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className={`font-display text-xl font-medium ${p.popular ? "text-white" : "text-ink"}`}>
@@ -226,24 +226,22 @@ function PricingPage() {
                   </h3>
                   {p.save && (
                     <span
-                      className={`rounded-full px-2 py-0.5 text-[9px] font-mono uppercase tracking-wider ${
-                        p.popular
-                          ? "bg-white/10 text-white/90"
-                          : "bg-neon-purple/10 text-neon-purple"
-                      }`}
+                      className={`rounded-full px-2 py-0.5 text-[9px] font-mono uppercase tracking-wider ${p.popular
+                        ? "bg-white/10 text-white/90"
+                        : "bg-neon-purple/10 text-neon-purple"
+                        }`}
                     >
                       {p.save}
                     </span>
                   )}
                 </div>
                 <p
-                  className={`text-[12px] leading-relaxed mb-6 ${
-                    p.popular ? "text-white/60" : "text-foreground/50"
-                  }`}
+                  className={`text-[12px] leading-relaxed mb-6 ${p.popular ? "text-white/60" : "text-foreground/50"
+                    }`}
                 >
                   {p.desc}
                 </p>
-                
+
                 <div className="mt-auto">
                   <div className="flex items-baseline gap-1 mb-6">
                     <span className={`font-display text-4xl font-semibold tracking-tight ${p.popular ? "text-white" : "text-ink"}`}>
@@ -256,11 +254,10 @@ function PricingPage() {
                     )}
                   </div>
                   <button
-                    className={`w-full rounded-full py-2.5 text-[13px] font-medium transition-all ${
-                      p.popular
-                        ? "bg-white text-ink hover:scale-[1.02]"
-                        : "bg-[#150624] text-white hover:scale-[1.02]"
-                    }`}
+                    className={`w-full rounded-full py-2.5 text-[13px] font-medium transition-all ${p.popular
+                      ? "bg-white text-ink hover:scale-[1.02]"
+                      : "bg-[#150624] text-white hover:scale-[1.02]"
+                      }`}
                   >
                     {p.cta} →
                   </button>
@@ -273,7 +270,7 @@ function PricingPage() {
         {/* Feature Comparison Columns */}
         <div className="max-w-7xl mx-auto px-6 mt-16">
           <h3 className="text-[13px] font-medium text-foreground/80 mb-6 pl-2">Features Included:</h3>
-          
+
           <div className="grid md:grid-cols-4 gap-5">
             {/* Col 1: Labels */}
             <div className="bg-white/80 rounded-[2rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hidden md:block">
@@ -294,7 +291,7 @@ function PricingPage() {
             </div>
 
             {/* Col 2: Starter */}
-            <div 
+            <div
               className="rounded-[2rem] p-8 shadow-glow relative overflow-hidden"
               style={{ background: "linear-gradient(180deg, #2A1144 0%, #150624 40%, #0A0310 100%)" }}
             >
@@ -310,10 +307,10 @@ function PricingPage() {
                     )}
                     {/* Mobile Header */}
                     <div className="md:hidden flex flex-col justify-end border-b border-white/10 pb-2 mb-4">
-                       <h4 className="font-semibold text-[13px] text-white/90">{cat.category}</h4>
+                      <h4 className="font-semibold text-[13px] text-white/90">{cat.category}</h4>
                     </div>
                     <div className={`hidden md:flex flex-col justify-end pb-2 mb-4 ${HEADER_HEIGHT}`} />
-                    
+
                     <div className="flex flex-col gap-3">
                       {cat.items.map((item) => (
                         <div key={item.label} className={`flex items-center justify-between md:justify-center ${ROW_HEIGHT}`}>
@@ -336,10 +333,10 @@ function PricingPage() {
                   )}
                   {/* Mobile Header */}
                   <div className="md:hidden flex flex-col justify-end border-b border-foreground/10 pb-2 mb-4">
-                     <h4 className="font-semibold text-[13px] text-ink">{cat.category}</h4>
+                    <h4 className="font-semibold text-[13px] text-ink">{cat.category}</h4>
                   </div>
                   <div className={`hidden md:flex flex-col justify-end pb-2 mb-4 ${HEADER_HEIGHT}`} />
-                  
+
                   <div className="flex flex-col gap-3">
                     {cat.items.map((item) => (
                       <div key={item.label} className={`flex items-center justify-between md:justify-center ${ROW_HEIGHT}`}>
@@ -361,10 +358,10 @@ function PricingPage() {
                   )}
                   {/* Mobile Header */}
                   <div className="md:hidden flex flex-col justify-end border-b border-foreground/10 pb-2 mb-4">
-                     <h4 className="font-semibold text-[13px] text-ink">{cat.category}</h4>
+                    <h4 className="font-semibold text-[13px] text-ink">{cat.category}</h4>
                   </div>
                   <div className={`hidden md:flex flex-col justify-end pb-2 mb-4 ${HEADER_HEIGHT}`} />
-                  
+
                   <div className="flex flex-col gap-3">
                     {cat.items.map((item) => (
                       <div key={item.label} className={`flex items-center justify-between md:justify-center text-center ${ROW_HEIGHT}`}>
