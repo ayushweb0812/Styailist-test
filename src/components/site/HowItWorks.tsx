@@ -56,7 +56,7 @@ export function HowItWorks() {
             preserveAspectRatio="none"
           >
             <motion.path
-              d="M 100 200 Q 350 0 600 140 T 1100 80"
+              d="M 0 150 C 150 150, 200 50, 325 50 C 480 50, 580 110, 735 110 C 890 110, 990 50, 1145 50 C 1180 50, 1200 100, 1200 100"
               stroke="url(#grad-how)"
               strokeWidth="2"
               fill="none"

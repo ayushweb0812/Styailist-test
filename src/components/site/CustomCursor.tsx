@@ -13,7 +13,6 @@ interface Particle {
 
 const colors = ["text-neon-pink", "text-neon-purple", "text-primary", "text-rose"];
 
-// A custom, premium 4-point star SVG instead of the default Lucide icon
 const StarSparkle = ({ size, className = "" }: { size: number; className?: string }) => (
   <svg
     width={size}
@@ -28,12 +27,8 @@ const StarSparkle = ({ size, className = "" }: { size: number; className?: strin
 );
 
 export function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
   const [particles, setParticles] = useState<Particle[]>([]);
   const [isClient, setIsClient] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
-  const [isClicking, setIsClicking] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -47,82 +42,30 @@ export function CustomCursor() {
 
     let particleId = 0;
 
-    const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-      setIsVisible(true);
-
-      // Add trailing particle on movement
-      if (Math.random() > 0.3) {
-        setParticles((prev) => [
-          ...prev.slice(-30), // keep max 30 particles to allow room for bursts
-          {
-            id: particleId++,
-            x: e.clientX,
-            y: e.clientY,
-            size: Math.random() * 12 + 6,
-            color: colors[Math.floor(Math.random() * colors.length)],
-          },
-        ]);
-      }
-    };
-
-    const handleMouseLeave = () => setIsVisible(false);
-    const handleMouseEnter = () => setIsVisible(true);
-
-    const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.closest("a") || target.closest("button") || target.closest("[role='button']")) {
-        setIsHovering(true);
-      } else {
-        setIsHovering(false);
-      }
-    };
-
     const handleMouseDown = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.closest("a") || target.closest("button") || target.closest("[role='button']")) {
-        setIsClicking(true);
+      // Spawn burst particles anywhere the user clicks
+      const burstParticles: Particle[] = Array.from({ length: 8 }).map((_, i) => {
+        const angle = (i * Math.PI * 2) / 8 + Math.random() * 0.5;
+        const distance = 40 + Math.random() * 40; // 40 to 80px burst radius
+        return {
+          id: particleId++,
+          x: e.clientX,
+          y: e.clientY,
+          targetX: e.clientX + Math.cos(angle) * distance,
+          targetY: e.clientY + Math.sin(angle) * distance,
+          size: Math.random() * 16 + 8,
+          color: colors[Math.floor(Math.random() * colors.length)],
+        };
+      });
 
-        // Spawn burst particles
-        const burstParticles: Particle[] = Array.from({ length: 8 }).map((_, i) => {
-          const angle = (i * Math.PI * 2) / 8 + Math.random() * 0.5;
-          const distance = 40 + Math.random() * 40; // 40 to 80px burst radius
-          return {
-            id: particleId++,
-            x: e.clientX,
-            y: e.clientY,
-            targetX: e.clientX + Math.cos(angle) * distance,
-            targetY: e.clientY + Math.sin(angle) * distance,
-            size: Math.random() * 16 + 8,
-            color: colors[Math.floor(Math.random() * colors.length)],
-          };
-        });
-
-        setParticles((prev) => [...prev.slice(-20), ...burstParticles]);
-      }
+      setParticles((prev) => [...prev.slice(-20), ...burstParticles]);
     };
 
-    const handleMouseUp = () => {
-      setIsClicking(false);
-    };
-
-    window.addEventListener("mousemove", updateMousePosition);
-    window.addEventListener("mouseover", handleMouseOver);
     window.addEventListener("mousedown", handleMouseDown);
-    window.addEventListener("mouseup", handleMouseUp);
-    
-    document.addEventListener("mouseleave", handleMouseLeave);
-    document.addEventListener("mouseenter", handleMouseEnter);
 
     return () => {
       window.removeEventListener("resize", checkMobile);
-      window.removeEventListener("mousemove", updateMousePosition);
-      window.removeEventListener("mouseover", handleMouseOver);
       window.removeEventListener("mousedown", handleMouseDown);
-      window.removeEventListener("mouseup", handleMouseUp);
-      
-      document.removeEventListener("mouseleave", handleMouseLeave);
-      document.removeEventListener("mouseenter", handleMouseEnter);
     };
   }, []);
 
@@ -143,68 +86,31 @@ export function CustomCursor() {
   if (!isClient || isMobile) return null;
 
   return (
-    <>
-      <style>{`
-        *, *::before, *::after {
-          cursor: none !important;
-        }
-      `}</style>
-
-      {/* Main Cursor */}
-      <motion.div
-        className="pointer-events-none fixed left-0 top-0 z-[9999] text-primary"
-        animate={{
-          x: mousePosition.x - 12,
-          y: mousePosition.y - 12,
-          scale: isClicking ? 0.8 : isHovering ? 1.5 : 1,
-          opacity: isVisible ? 1 : 0,
-        }}
-        transition={{
-          x: { duration: 0 },
-          y: { duration: 0 },
-          scale: { type: "spring", stiffness: 400, damping: 25 },
-          opacity: { duration: 0.15 },
-        }}
-      >
+    <AnimatePresence>
+      {particles.map((p) => (
         <motion.div
-          animate={{ rotate: [0, 90, 180, 270, 360], scale: [1, 1.15, 1, 1.15, 1] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+          key={p.id}
+          className={`pointer-events-none fixed left-0 top-0 z-[9998] ${p.color}`}
+          initial={{
+            opacity: 0.8,
+            scale: 1,
+            x: p.x - p.size / 2,
+            y: p.y - p.size / 2,
+            rotate: 0,
+          }}
+          animate={{
+            opacity: 0,
+            scale: 0,
+            x: p.targetX! - p.size / 2,
+            y: p.targetY! - p.size / 2,
+            rotate: 180,
+          }}
+          exit={{ opacity: 0, scale: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <StarSparkle size={24} className="drop-shadow-[0_0_8px_rgba(255,105,180,0.6)]" />
+          <StarSparkle size={p.size} />
         </motion.div>
-      </motion.div>
-
-      {/* Trailing and Burst Particles */}
-      <AnimatePresence>
-        {particles.map((p) => (
-          <motion.div
-            key={p.id}
-            className={`pointer-events-none fixed left-0 top-0 z-[9998] ${p.color}`}
-            initial={{
-              opacity: 0.8,
-              scale: 1,
-              x: p.x - p.size / 2,
-              y: p.y - p.size / 2,
-              rotate: 0,
-            }}
-            animate={
-              p.targetX !== undefined
-                ? {
-                    opacity: 0,
-                    scale: 0,
-                    x: p.targetX - p.size / 2,
-                    y: p.targetY! - p.size / 2,
-                    rotate: 180,
-                  }
-                : { opacity: 0, scale: 0, y: p.y + 20, rotate: 180 }
-            }
-            exit={{ opacity: 0, scale: 0 }}
-            transition={{ duration: p.targetX !== undefined ? 0.6 : 0.8, ease: "easeOut" }}
-          >
-            <StarSparkle size={p.size} />
-          </motion.div>
-        ))}
-      </AnimatePresence>
-    </>
+      ))}
+    </AnimatePresence>
   );
 }

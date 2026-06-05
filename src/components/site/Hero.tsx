@@ -44,8 +44,8 @@ export function Hero() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
           className="font-display text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-semibold tracking-tight leading-[1.15] text-ink mt-8 max-w-5xl mx-auto pb-2"
         >
-          <span className="block">Your Customers Don't Need{" "}<span className="text-foreground/40">More Choices.</span></span>
-          <span className="block">They Need The{" "}<span className="text-gradient-primary italic">Right Ones.</span></span>
+          <span className="block">Your Customers Don't Need{" "}<span className="text-gradient-primary">More Choices.</span></span>
+          <span className="block">They Need The{" "}<span className="text-gradient-primary">Right Ones.</span></span>
         </motion.h1>
 
         <motion.p
