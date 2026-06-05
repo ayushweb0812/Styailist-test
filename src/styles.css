@@ -50,14 +50,14 @@
   --color-neon-pink: var(--neon-pink);
   --color-neon-purple: var(--neon-purple);
 
-  --shadow-soft: 0 10px 40px -10px color-mix(in oklab, var(--ink) 12%, transparent);
-  --shadow-glow: 0 30px 80px -20px color-mix(in oklab, var(--neon-purple) 30%, transparent);
+  --shadow-soft: 0 10px 30px rgba(0,0,0,.04);
+  --shadow-glow: 0 20px 60px rgba(192,132,252,.25);
   --shadow-glass:
-    0 40px 80px -20px color-mix(in oklab, var(--neon-purple) 22%, transparent),
+    0 20px 40px rgba(236,72,153,.08),
     inset 0 2px 4px color-mix(in oklab, white 60%, transparent);
   --shadow-card:
     0 1px 0 0 color-mix(in oklab, white 60%, transparent),
-    0 18px 40px -22px color-mix(in oklab, var(--neon-purple) 25%, transparent);
+    0 10px 30px rgba(0,0,0,.04);
   --shadow-edge: inset 0 0 0 1px color-mix(in oklab, white 60%, transparent);
 
   --gradient-hero:
@@ -76,8 +76,8 @@
       color-mix(in oklab, white 90%, transparent),
       transparent 70%
     );
-  --gradient-primary: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
-  --gradient-warm: linear-gradient(135deg, var(--neon-pink), var(--neon-purple) 60%, var(--ink));
+  --gradient-primary: linear-gradient(135deg, #FF8DB8 0%, #F472B6 35%, #C084FC 70%, #A855F7 100%);
+  --gradient-warm: linear-gradient(135deg, #FF8DB8 0%, #F472B6 35%, #C084FC 70%, #A855F7 100%);
   --gradient-glass: linear-gradient(
     135deg,
     color-mix(in oklab, white 70%, transparent),
@@ -89,7 +89,7 @@
   --radius: 1.25rem;
 
   /* Liquid Glass — pink + purple on near-white */
-  --background: oklch(0.985 0.006 320); /* surface bg */
+  --background: oklch(0.97 0 0); /* neutral warm gray surface bg */
   --foreground: oklch(0.18 0.04 300); /* deep ink */
   --ink: oklch(0.16 0.05 300);
   --cream: oklch(0.97 0.012 330);
@@ -135,7 +135,8 @@
     scroll-behavior: smooth;
   }
   body {
-    background-color: var(--color-background);
+    background: linear-gradient(180deg, #F5F5F5 0%, #EFEFEF 100%);
+    background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-display);
     font-feature-settings: "ss01", "cv11";
@@ -168,13 +169,13 @@
 
 @layer utilities {
   .text-gradient-warm {
-    background: var(--gradient-warm);
+    background: linear-gradient(90deg, #FF8DB8, #C084FC);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .text-gradient-primary {
-    background: var(--gradient-primary);
+    background: linear-gradient(90deg, #FF8DB8, #C084FC);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -299,4 +300,45 @@
 }
 .animate-spin-slow {
   animation: spin-slow 22s linear infinite;
+}
+
+@keyframes cta-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(192,132,252,0.4), 0 4px 20px rgba(0,0,0,0.1);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 20px 6px rgba(192,132,252,0.25), 0 8px 30px rgba(0,0,0,0.12);
+  }
+}
+
+.animate-cta-pulse {
+  animation: cta-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes fluid-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-fluid-gradient {
+  background-size: 200% auto;
+  animation: fluid-gradient 4s linear infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
 }

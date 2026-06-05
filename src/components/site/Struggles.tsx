@@ -86,7 +86,8 @@ export function Struggles() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-[2rem] bg-glass ring-glass shadow-card p-8 md:p-10 relative overflow-hidden"
+            className="rounded-[2rem] bg-glass ring-glass shadow-card p-8 md:p-10 relative overflow-hidden hover:-translate-y-1 transition-all"
+            style={{ background: 'rgba(255,255,255,.9)', border: '1px solid rgba(255,192,203,.15)', boxShadow: '0 10px 30px rgba(0,0,0,.04)' }}
           >
             <div className="absolute -top-20 -right-20 w-48 h-48 rounded-full bg-neon-pink/20 blur-3xl" />
             <div className="relative">
@@ -127,7 +128,8 @@ export function Struggles() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-[2rem] bg-ink text-background p-8 md:p-10 relative overflow-hidden"
+            className="rounded-[2rem] text-background p-8 md:p-10 relative overflow-hidden"
+            style={{ background: 'linear-gradient(135deg, #170824 0%, #230A38 40%, #34104D 100%)', boxShadow: '0 10px 40px rgba(236,72,153,.15)' }}
           >
             <div className="absolute -bottom-20 -left-20 w-48 h-48 rounded-full bg-neon-purple/25 blur-3xl" />
             <div className="relative">

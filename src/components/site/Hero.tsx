@@ -5,11 +5,13 @@ export function Hero() {
     <section id="home" className="relative pt-28 pb-24 overflow-hidden bg-hero-glow">
       {/* Ambient gradient washes */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute top-[-10%] left-[-10%] w-[55vw] h-[55vw] rounded-full bg-neon-pink/20 blur-[120px] animate-blob" />
+        <div className="absolute top-[-10%] left-[-10%] w-[55vw] h-[55vw] rounded-full blur-[120px] animate-blob" style={{ background: 'radial-gradient(circle, rgba(255,182,193,.45) 0%, rgba(255,182,193,.15) 45%, transparent 75%)' }} />
         <div
-          className="absolute bottom-[-15%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-neon-purple/20 blur-[140px] animate-blob"
+          className="absolute bottom-[-15%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-neon-purple/12 blur-[140px] animate-blob"
           style={{ animationDelay: "-8s" }}
         />
+        {/* Soft hero glow behind headline */}
+        <div className="absolute top-[10%] left-[5%] w-[50vw] h-[50vw]" style={{ background: 'radial-gradient(circle, rgba(255,182,193,.45) 0%, rgba(255,182,193,.15) 45%, transparent 75%)', filter: 'blur(40px)' }} />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -32,48 +34,18 @@ export function Hero() {
             <span className="absolute inset-0 rounded-full bg-neon-pink animate-ping opacity-75" />
             <span className="relative rounded-full w-2 h-2 bg-neon-pink" />
           </span>
-          Sign up — see a store using Styailist in real time
+          Experience Styailist
           <span className="text-neon-purple">→</span>
         </motion.a>
 
         <motion.h1
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.06, delayChildren: 0.15 } },
-          }}
-          className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-balance text-ink mt-8 max-w-5xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+          className="font-display text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-semibold tracking-tight leading-[1.15] text-ink mt-8 max-w-5xl mx-auto pb-2"
         >
-          {["Your", "customer's", "perfect", "outfit", "is"].map((word, i) => (
-            <motion.span
-              key={`h1-${i}`}
-              variants={{
-                hidden: { opacity: 0, y: 18 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-                },
-              }}
-              className={`inline-block mr-[0.25em] ${word === "perfect" ? "text-gradient-primary" : ""}`}
-            >
-              {word}
-            </motion.span>
-          ))}
-          <motion.span
-            variants={{
-              hidden: { opacity: 0, y: 18 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-              },
-            }}
-            className="inline-block py-2"
-          >
-            <span className="text-gradient-primary">hiding in your catalogue</span>.
-          </motion.span>
+          <span className="block">Your Customers Don't Need{" "}<span className="text-foreground/40">More Choices.</span></span>
+          <span className="block">They Need The{" "}<span className="text-gradient-primary italic">Right Ones.</span></span>
         </motion.h1>
 
         <motion.p
@@ -81,38 +53,11 @@ export function Hero() {
           animate="visible"
           variants={{
             hidden: {},
-            visible: { transition: { staggerChildren: 0.04, delayChildren: 0.55 } },
-          }}
-          className="text-2xl md:text-3xl text-foreground/55 mt-6 font-medium"
-        >
-          {"Will they find it in time?".split(" ").map((word, i) => (
-            <motion.span
-              key={`p1-${i}`}
-              variants={{
-                hidden: { opacity: 0, y: 12 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-                },
-              }}
-              className="inline-block mr-[0.25em]"
-            >
-              {word}
-            </motion.span>
-          ))}
-        </motion.p>
-
-        <motion.p
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.025, delayChildren: 0.75 } },
+            visible: { transition: { staggerChildren: 0.025, delayChildren: 0.65 } },
           }}
           className="text-base md:text-lg text-foreground/70 leading-relaxed max-w-2xl mx-auto mt-8"
         >
-          {"Styailist collapses your entire range down to the products genuinely right for each shopper the moment they land."
+          {"Styailist is a personal shopper for every customer that visits your online store."
             .split(" ")
             .map((word, i) => (
               <motion.span
@@ -142,10 +87,11 @@ export function Hero() {
             href="https://calendly.com/sanyogita-sghsglobal/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="h-12 px-7 rounded-full bg-gradient-to-r from-neon-pink to-neon-purple text-white font-medium text-sm flex items-center gap-2 hover:shadow-glow hover:scale-[1.02] transition-all active:scale-[0.98] outline-none"
+            className="h-12 px-7 rounded-full text-white font-medium text-sm flex items-center gap-2 hover:shadow-glow hover:scale-[1.05] transition-all active:scale-[0.98] outline-none animate-cta-pulse"
+            style={{ background: 'linear-gradient(135deg, #FF8DB8 0%, #F472B6 35%, #C084FC 70%, #A855F7 100%)' }}
           >
             Book a demo
-            <span>✨</span>
+
           </a>
         </motion.div>
       </div>

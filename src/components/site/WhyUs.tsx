@@ -55,7 +55,10 @@ export function WhyUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="group rounded-3xl bg-glass-strong ring-glass shadow-card p-8 hover:shadow-glass transition-all hover:-translate-y-1"
+              className="group rounded-3xl p-8 transition-all hover:-translate-y-1"
+              style={{ background: 'rgba(255,255,255,.9)', border: '1px solid rgba(255,192,203,.15)', boxShadow: '0 10px 30px rgba(0,0,0,.04)' }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(236,72,153,.08)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,.04)'; }}
             >
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-4">
                 <div>

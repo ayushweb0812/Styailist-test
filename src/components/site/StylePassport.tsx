@@ -129,7 +129,8 @@ export function StylePassport() {
           <motion.div
             animate={{ y: [0, -14, 0] }}
             transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-            className="absolute top-8 md:top-14 right-4 md:right-20 z-30 p-5 rounded-2xl bg-ink text-background w-52 rotate-3 shadow-glass"
+            className="absolute top-8 md:top-14 right-4 md:right-20 z-30 p-5 rounded-2xl text-background w-52 rotate-3 shadow-glass"
+            style={{ background: 'linear-gradient(135deg, #170824 0%, #230A38 40%, #34104D 100%)', boxShadow: '0 10px 40px rgba(236,72,153,.15)' }}
           >
             <p className="text-[10px] uppercase tracking-wider text-background/55 font-mono">
               Conversion

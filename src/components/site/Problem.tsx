@@ -95,7 +95,10 @@ export function Problem() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="rounded-3xl bg-glass ring-glass shadow-card p-8 hover:shadow-glass transition-all hover:-translate-y-1"
+              className="rounded-3xl p-8 transition-all hover:-translate-y-1"
+              style={{ background: 'rgba(255,255,255,.9)', border: '1px solid rgba(255,192,203,.15)', boxShadow: '0 10px 30px rgba(0,0,0,.04)' }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(236,72,153,.08)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,.04)'; }}
             >
               <div className="flex items-start justify-between mb-6">
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/40">
@@ -120,7 +123,8 @@ export function Problem() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mt-12 rounded-[2rem] bg-ink text-background p-10 md:p-14 relative overflow-hidden"
+          className="mt-12 rounded-[2rem] text-background p-10 md:p-14 relative overflow-hidden"
+          style={{ background: 'linear-gradient(135deg, #170824 0%, #230A38 40%, #34104D 100%)', boxShadow: '0 10px 40px rgba(236,72,153,.15)' }}
         >
           <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-neon-pink/30 blur-3xl" />
           <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-neon-purple/30 blur-3xl" />
@@ -144,20 +148,17 @@ export function Problem() {
                 {
                   t: "Color Analysis",
                   d: "Scans your catalogue for each shopper's unique palette",
-                  c: "var(--neon-pink)",
-                  emoji: "🎨",
+                  iconSrc: "/Colour Analysis.svg",
                 },
                 {
                   t: "Body Analysis",
                   d: "Finds their body type and the cuts that match",
-                  c: "var(--neon-purple)",
-                  emoji: "👗",
+                  iconSrc: "/Body Anaysis.svg",
                 },
                 {
                   t: "Blend",
                   d: "Add a piece they're shopping for — we find the combination",
-                  c: "var(--sage)",
-                  emoji: "✨",
+                  iconSrc: "/Blend.svg",
                 },
               ].map((c, i) => (
                 <motion.div
@@ -169,12 +170,7 @@ export function Problem() {
                   transition={{ delay: 0.3 + i * 0.1 }}
                   className="flex items-center gap-4 p-4 rounded-2xl bg-background/5 backdrop-blur ring-1 ring-background/10 hover:bg-background/10 transition-colors"
                 >
-                  <div
-                    className="w-11 h-11 rounded-xl shrink-0 shadow-inner flex items-center justify-center text-lg"
-                    style={{ background: c.c }}
-                  >
-                    {c.emoji}
-                  </div>
+                  <img src={c.iconSrc} alt={c.t} className="w-11 h-11 shrink-0" />
                   <div className="flex-1">
                     <p className="font-medium">{c.t}</p>
                     <p className="text-xs text-background/60 mt-0.5">{c.d}</p>
@@ -201,7 +197,7 @@ function StatVisual({ kind }: { kind: "bounce" | "bar" | "ring" }) {
             style={{ width: 100, height: 100, animationDelay: `${i * 0.6}s` }}
           />
         ))}
-        <div className="relative font-mono text-[10px] uppercase tracking-[0.2em] rounded-full bg-ink text-background px-3 py-1.5">
+        <div className="relative font-mono text-[10px] uppercase tracking-[0.2em] rounded-full text-background px-3 py-1.5" style={{ background: 'linear-gradient(135deg, #170824, #34104D)' }}>
           Bounce
         </div>
       </div>

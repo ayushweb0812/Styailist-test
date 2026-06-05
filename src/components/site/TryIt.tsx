@@ -47,9 +47,28 @@ export function TryIt() {
 
   return (
     <section id="try" className="relative py-24 px-6 overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-hero-glow opacity-60" />
+      {/* Ambient gradient glow backdrop */}
+      <div className="absolute inset-0 z-0">
+        {/* Wide sweeping gradient wash across the full section */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(135deg, rgba(255,182,210,0.45) 0%, rgba(240,200,230,0.3) 25%, rgba(220,190,250,0.25) 50%, rgba(200,170,252,0.35) 75%, rgba(180,150,240,0.2) 100%)',
+          }}
+        />
+        {/* Large pink glow — left side */}
+        <div
+          className="absolute -left-[5%] top-[0%] w-[65%] h-[100%] rounded-full blur-[100px]"
+          style={{ background: 'radial-gradient(ellipse at center, rgba(255,141,184,0.5) 0%, rgba(244,114,182,0.25) 45%, transparent 70%)' }}
+        />
+        {/* Large purple glow — right side */}
+        <div
+          className="absolute -right-[5%] top-[0%] w-[55%] h-[100%] rounded-full blur-[100px]"
+          style={{ background: 'radial-gradient(ellipse at center, rgba(192,132,252,0.45) 0%, rgba(168,85,247,0.2) 45%, transparent 70%)' }}
+        />
+      </div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid md:grid-cols-12 gap-8 items-end mb-12">
           <div className="md:col-span-7">
             <span className="text-[11px] uppercase tracking-[0.25em] text-foreground/55 font-medium">
@@ -82,8 +101,12 @@ export function TryIt() {
           <div className="md:col-span-7 rounded-[2rem] bg-glass-strong ring-glass shadow-glass overflow-hidden flex flex-col min-h-[520px]">
             <div className="flex items-center justify-between px-5 py-3 border-b border-white/40 bg-white/40">
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-neon-pink to-neon-purple flex items-center justify-center text-white text-xs font-bold">
-                  St
+                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-neon-pink to-neon-purple flex items-center justify-center overflow-hidden shrink-0">
+                  <img
+                    src="/styailist.svg"
+                    alt="Styailist"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <span className="font-display text-sm font-semibold">Styailist</span>
                 <span className="ml-2 flex items-center gap-1 text-[10px] font-mono text-foreground/55">
@@ -182,7 +205,7 @@ export function TryIt() {
           </div>
 
           {/* Style Passport result */}
-          <div className="md:col-span-5 rounded-[2rem] bg-ink text-background p-6 relative overflow-hidden">
+          <div className="md:col-span-5 rounded-[2rem] text-background p-6 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #170824 0%, #230A38 40%, #34104D 100%)', boxShadow: '0 10px 40px rgba(236,72,153,.15)' }}>
             <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-neon-pink/30 blur-3xl" />
             <div className="absolute -bottom-20 -left-20 w-60 h-60 rounded-full bg-neon-purple/30 blur-3xl" />
             <div className="relative">

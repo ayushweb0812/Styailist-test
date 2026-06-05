@@ -86,7 +86,7 @@ export function HowItWorks() {
                 style={{ marginTop: i === 1 ? "3rem" : "0" }}
                 className="relative group"
               >
-                <div className="rounded-3xl bg-glass-strong ring-glass shadow-card p-8 hover:shadow-glass transition-all hover:-translate-y-1">
+                <div className="rounded-3xl p-8 transition-all hover:-translate-y-1" style={{ background: 'rgba(255,255,255,.9)', border: '1px solid rgba(255,192,203,.15)', boxShadow: '0 10px 30px rgba(0,0,0,.04)' }}>
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-xs text-foreground/50">{s.n}</span>
                     <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-neon-pink/15 to-neon-purple/15 text-ink flex items-center justify-center text-lg ring-1 ring-white/60 group-hover:from-neon-pink group-hover:to-neon-purple group-hover:text-white transition-colors">

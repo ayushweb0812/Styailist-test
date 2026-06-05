@@ -1,29 +1,22 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const plans = [
-  {
-    name: "Lite",
-    desc: "Up to 1,000 products + Up to 500 style queries / month",
-    price: { monthly: "$149", annual: "$127" },
-    suffix: "/month",
-    cta: "Subscribe now",
-    popular: false,
-    save: "Save 15%",
-    features: ["Manage up to 1,000 products", "Up to 500 style queries per month"],
-  },
   {
     name: "Starter",
     desc: "Up to 3,000 products + Up to 2,000 style queries / month",
     price: { monthly: "$299", annual: "$164" },
     suffix: "/month",
-    cta: "Subscribe now",
+    cta: "Get Started",
     popular: true,
     save: "Save 45%",
     features: [
-      "Manage up to 3,000 products",
-      "Up to 2,000 style queries per month",
-      "Colour & Body Analysis personalization",
+      "5,000 shopper sessions",
+      "1,000 shopper profiles",
+      "Style Passport",
+      "Shopify & WooCommerce",
     ],
   },
   {
@@ -31,14 +24,14 @@ const plans = [
     desc: "Up to 10,000 products + Up to 10,000 style queries / month",
     price: { monthly: "$599", annual: "$210" },
     suffix: "/month",
-    cta: "Subscribe now",
+    cta: "Start Growing",
     popular: false,
     save: "Save 65%",
     features: [
-      "Everything in Starter Plan",
-      "Blend module included",
-      "Up to 10,000 products",
-      "Up to 10,000 style queries per month",
+      "25,000 shopper sessions",
+      "10,000 shopper profiles",
+      "Style Passport + Virtual Try-On",
+      "Advanced Insights",
     ],
   },
   {
@@ -49,10 +42,10 @@ const plans = [
     popular: false,
     save: "Save 75%",
     features: [
-      "Scale beyond 5,000 products",
-      "Unlock 20,000+ monthly queries",
-      "Multi-brand support",
-      "Dedicated success team",
+      "Unlimited sessions",
+      "Unlimited profiles",
+      "Advanced Insights",
+      "Custom integrations",
     ],
   },
 ];
@@ -76,7 +69,7 @@ export function Pricing() {
             <span className="text-gradient-primary">personalisation</span> seriously.
           </motion.h2>
           <p className="text-foreground/65 mt-5 max-w-md mx-auto">
-            Plans start from $149/month. No contracts. No setup fees. Cancel anytime.
+            Plans start from $299/month. No contracts. No setup fees. Cancel anytime.
           </p>
 
           <div className="mt-8 inline-flex items-center bg-glass ring-glass rounded-full p-1">
@@ -101,7 +94,7 @@ export function Pricing() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
+        <div className="grid md:grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto">
           {plans.map((p, i) => (
             <motion.div
               key={p.name}
@@ -111,9 +104,14 @@ export function Pricing() {
               transition={{ delay: i * 0.1, duration: 0.6 }}
               className={`relative rounded-[2rem] text-left p-8 transition-all ${
                 p.popular
-                  ? "bg-ink text-background shadow-glow md:-mt-6 md:mb-6"
-                  : "bg-glass-strong ring-glass shadow-card hover:-translate-y-1 hover:shadow-glass"
+                  ? "text-background"
+                  : "hover:-translate-y-1"
               }`}
+              style={
+                p.popular
+                  ? { background: 'linear-gradient(135deg, #1B0728, #34104D)', boxShadow: '0 20px 60px rgba(192,132,252,.25)' }
+                  : { background: 'rgba(255,255,255,.9)', border: '1px solid rgba(255,192,203,.15)', boxShadow: '0 10px 30px rgba(0,0,0,.04)' }
+              }
             >
               {p.popular && (
                 <div className="absolute inset-0 rounded-[2rem] overflow-hidden pointer-events-none">
@@ -122,7 +120,7 @@ export function Pricing() {
                 </div>
               )}
               {p.popular && (
-                <div className="absolute -top-3 left-8 rounded-full bg-gradient-to-r from-neon-pink to-neon-purple text-white px-3 py-1 text-[11px] font-mono uppercase tracking-wider">
+                <div className="absolute -top-3 left-8 rounded-full text-white px-3 py-1 text-[11px] font-mono uppercase tracking-wider" style={{ background: 'linear-gradient(90deg, #FF8DB8, #C084FC)' }}>
                   Most popular
                 </div>
               )}
@@ -183,6 +181,27 @@ export function Pricing() {
             </motion.div>
           ))}
         </div>
+
+        {/* View Full Feature Comparison link */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          className="text-center mt-16"
+        >
+          <Link
+            to="/pricing"
+            className="group relative inline-flex items-center gap-1.5 text-base font-medium text-ink hover:text-primary transition-colors"
+          >
+            View Full Feature Comparison
+            <ArrowRight size={16} strokeWidth={2} className="group-hover:translate-x-0.5 transition-transform" />
+            <span
+              className="absolute -bottom-1 left-0 right-0 h-[2px] rounded-full"
+              style={{ background: 'linear-gradient(90deg, #FF8DB8, #C084FC)' }}
+            />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
