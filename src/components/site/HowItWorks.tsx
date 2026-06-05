@@ -10,7 +10,7 @@ const steps = [
   {
     n: "02",
     t: "Shoppers meet their stylist",
-    d: "A 5-exchange conversation that feels nothing like a form. They leave with a Style Passport. You leave with a profile.",
+    d: "A conversation that feels nothing like a form. They leave with a Style Passport. You leave with a profile.",
     icon: "✦",
   },
   {

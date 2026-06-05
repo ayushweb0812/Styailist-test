@@ -74,9 +74,9 @@ export function Problem() {
               viewport={{ once: true }}
               className="font-serif text-4xl md:text-6xl font-normal tracking-tight mt-4 leading-[1.02] text-balance"
             >
-              They didn't want fewer products.
+              They just kept scrolling.
               <br />
-              <span className="text-gradient-primary">They wanted theirs.</span>
+              <span className="text-gradient-primary"> to find that one Product. </span>
             </motion.h2>
           </div>
           <div className="md:col-span-4 md:col-start-9">
@@ -136,7 +136,7 @@ export function Problem() {
               <h3 className="font-serif text-3xl md:text-5xl font-normal mt-4 leading-[1.02]">
                 Your catalogue
                 <br />
-                <span className="text-gradient-primary">just got a brain.</span>
+                <span className="text-gradient-primary">just got Smarter.</span>
               </h3>
               <p className="text-background/70 mt-5 max-w-md leading-relaxed">
                 Styailist reads every shopper. Understands their style. Shows them exactly what's

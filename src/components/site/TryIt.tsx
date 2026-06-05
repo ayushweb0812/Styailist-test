@@ -80,7 +80,7 @@ export function TryIt() {
               viewport={{ once: true }}
               className="font-serif text-4xl md:text-6xl font-normal tracking-tight mt-4 leading-[1.02]"
             >
-              How your shoppers <span className="italic text-gradient-primary">will use it.</span>
+              A glimpse of <span className="italic text-gradient-primary">how it works.</span>
             </motion.h2>
           </div>
           <div className="md:col-span-4 md:col-start-9">
@@ -131,11 +131,10 @@ export function TryIt() {
                   >
                     {"text" in m ? (
                       <div
-                        className={`max-w-[78%] rounded-2xl px-4 py-2.5 text-sm leading-snug ${
-                          m.from === "user"
+                        className={`max-w-[78%] rounded-2xl px-4 py-2.5 text-sm leading-snug ${m.from === "user"
                             ? "bg-gradient-to-br from-neon-pink to-neon-purple text-white rounded-br-md shadow-glow"
                             : "bg-white/80 ring-1 ring-white/70 text-ink rounded-bl-md"
-                        }`}
+                          }`}
                       >
                         {m.text}
                       </div>
