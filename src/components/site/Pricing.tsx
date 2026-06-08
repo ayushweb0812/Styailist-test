@@ -154,14 +154,15 @@ export function Pricing() {
                     </span>
                   )}
                 </div>
-                <button
-                  className={`mt-6 w-full rounded-full py-3 text-sm font-medium transition-all ${p.popular
+                <a
+                  href="https://my.styailist.com/signup"
+                  className={`mt-6 block text-center w-full rounded-full py-3 text-sm font-medium transition-all ${p.popular
                     ? "bg-white text-ink hover:bg-primary hover:text-white"
                     : "bg-ink text-background hover:shadow-glow"
                     }`}
                 >
                   {p.cta} →
-                </button>
+                </a>
                 <ul
                   className={`mt-6 text-sm space-y-2.5 ${p.popular ? "text-background/75" : "text-foreground/70"}`}
                 >

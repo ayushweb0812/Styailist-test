@@ -265,14 +265,15 @@ function PricingPage() {
                       </span>
                     )}
                   </div>
-                  <button
-                    className={`w-full rounded-full py-3.5 text-[13px] font-medium transition-all ${p.popular
+                  <a
+                    href="https://my.styailist.com/signup"
+                    className={`block text-center w-full rounded-full py-3.5 text-[13px] font-medium transition-all ${p.popular
                       ? "bg-white text-ink hover:scale-[1.02]"
                       : "bg-[#150624] text-white hover:scale-[1.02]"
                       }`}
                   >
                     {p.cta} →
-                  </button>
+                  </a>
                   <p className="text-center text-[10.5px] mt-4 font-medium opacity-0 pointer-events-none" aria-hidden>
                     Spacer
                   </p>
