@@ -78,7 +78,7 @@ export function Problem() {
               <br />
               <span className="text-gradient-primary"> to find that one Product. </span>
             </motion.h2>
-          </div>``
+          </div>
           <div className="md:col-span-4 md:col-start-9">
             <p className="text-foreground/65 leading-relaxed">
               They wanted that one product your website is still waiting to show them, buried under
