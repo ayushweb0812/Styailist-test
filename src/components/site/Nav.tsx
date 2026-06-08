@@ -33,7 +33,7 @@ export function Nav() {
             className="h-8 w-auto group-hover:scale-105 transition-transform"
           />
           <span className="font-display text-xl font-semibold tracking-tight">
-            Sty<span className="text-gradient-primary">ai</span>list<span className="text-primary">.</span>
+            Sty<span className="text-[#AC1559]">ai</span>list<span className="text-primary">.</span>
           </span>
         </a>
         <nav className="hidden md:flex items-center gap-1 text-sm font-medium">

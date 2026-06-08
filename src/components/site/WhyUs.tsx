@@ -9,13 +9,13 @@ const reasons = [
   },
   {
     title: "Live in 24 Hours, Not 24 Weeks",
-    body: <>One snippet. No dev team. No design rework. Sty<span className="text-gradient-primary">ai</span>list inherits your fonts, colours, and layout so it looks like you built it.</>,
+    body: <>One snippet. No dev team. No design rework. Sty<span className="text-[#AC1559]">ai</span>list inherits your fonts, colours, and layout so it looks like you built it.</>,
     stat: "1",
     statLabel: "line of code to install",
   },
   {
     title: "Numbers That Move the Needle",
-    body: <>Shoppers who use Sty<span className="text-gradient-primary">ai</span>list convert 3× more often, spend longer on site, and return at significantly lower rates.</>,
+    body: <>Shoppers who use Sty<span className="text-[#AC1559]">ai</span>list convert 3× more often, spend longer on site, and return at significantly lower rates.</>,
     stat: "+312%",
     statLabel: "average conversion lift",
   },
@@ -35,7 +35,7 @@ export function WhyUs() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-[11px] uppercase tracking-[0.25em] text-foreground/55 font-medium">
-            — Why Sty<span className="text-gradient-primary">ai</span>list —
+            — Why Sty<span className="text-[#AC1559]">ai</span>list —
           </span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

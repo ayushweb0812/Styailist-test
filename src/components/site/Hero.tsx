@@ -34,7 +34,7 @@ export function Hero() {
             <span className="absolute inset-0 rounded-full bg-neon-pink animate-ping opacity-75" />
             <span className="relative rounded-full w-2 h-2 bg-neon-pink" />
           </span>
-          <span>Experience Sty<span className="text-gradient-primary">ai</span>list</span>
+          <span>Experience Sty<span className="text-[#AC1559]">ai</span>list</span>
           <span className="text-neon-purple">→</span>
         </motion.a>
 
@@ -72,7 +72,7 @@ export function Hero() {
                 }}
                 className="inline-block mr-[0.25em]"
               >
-                {word === "Styailist" ? <>Sty<span className="text-gradient-primary">ai</span>list</> : word}
+                {word === "Styailist" ? <>Sty<span className="text-[#AC1559]">ai</span>list</> : word}
               </motion.span>
             ))}
         </motion.p>

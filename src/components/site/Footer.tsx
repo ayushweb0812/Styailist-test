@@ -12,7 +12,7 @@ export function Footer() {
               className="h-8 w-auto group-hover:scale-105 transition-transform"
             />
             <span className="font-display text-lg font-semibold text-white">
-              Sty<span className="text-gradient-primary">ai</span>list<span className="text-primary">.</span>
+              Sty<span className="text-[#AC1559]">ai</span>list<span className="text-primary">.</span>
             </span>
           </a>
 

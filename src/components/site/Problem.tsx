@@ -139,7 +139,7 @@ export function Problem() {
                 <span className="text-gradient-primary">just got smarter.</span>
               </h3>
               <p className="text-background/70 mt-5 max-w-md leading-relaxed">
-                Sty<span className="text-gradient-primary">ai</span>list reads every shopper. Understands their style. Shows them exactly what they will like.
+                Sty<span className="text-[#AC1559]">ai</span>list reads every shopper. Understands their style. Shows them exactly what they will like.
               </p>
             </div>
             <div className="md:col-span-5 grid gap-2.5">

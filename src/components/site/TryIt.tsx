@@ -18,7 +18,7 @@ const floralProducts: Product[] = [
 ];
 
 const script: Msg[] = [
-  { id: "m1", from: "ai", text: <>Hi, I'm Sty<span className="text-gradient-primary">ai</span>list AI. How can I help you today?</> },
+  { id: "m1", from: "ai", text: <>Hi, I'm Sty<span className="text-[#AC1559]">ai</span>list AI. How can I help you today?</> },
   { id: "m2", from: "user", text: "Help me find a floral dress." },
   { id: "m3", from: "ai", text: "Getting the right outfits for you…" },
   { id: "m4", from: "ai", products: floralProducts },
@@ -85,7 +85,7 @@ export function TryIt() {
           </div>
           <div className="md:col-span-4 md:col-start-9">
             <p className="text-foreground/65 leading-relaxed">
-              One short chat. Sty<span className="text-gradient-primary">ai</span>list surfaces the products genuinely right for them  in seconds.
+              One short chat. Sty<span className="text-[#AC1559]">ai</span>list surfaces the products genuinely right for them  in seconds.
             </p>
           </div>
         </div>
@@ -108,7 +108,7 @@ export function TryIt() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <span className="font-display text-sm font-semibold">Sty<span className="text-gradient-primary">ai</span>list</span>
+                <span className="font-display text-sm font-semibold">Sty<span className="text-[#AC1559]">ai</span>list</span>
                 <span className="ml-2 flex items-center gap-1 text-[10px] font-mono text-foreground/55">
                   <span className="w-1.5 h-1.5 rounded-full bg-neon-purple animate-pulse" /> live
                 </span>
@@ -195,7 +195,7 @@ export function TryIt() {
 
             <div className="px-5 py-3 border-t border-white/40 bg-white/40 flex items-center gap-2">
               <div className="flex-1 rounded-full bg-white/70 ring-1 ring-white/60 px-4 py-2 text-xs text-foreground/50">
-                Ask Sty<span className="text-gradient-primary">ai</span>list anything…
+                Ask Sty<span className="text-[#AC1559]">ai</span>list anything…
               </div>
               <div className="w-9 h-9 rounded-full bg-gradient-to-br from-neon-pink to-neon-purple flex items-center justify-center text-white text-sm">
                 →

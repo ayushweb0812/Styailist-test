@@ -42,7 +42,7 @@ function Terms() {
 
           <div className="space-y-10 text-foreground/75 leading-relaxed relative z-10 text-base md:text-lg">
             <p className="text-sm text-foreground/70 mb-8 italic">
-              Welcome to Sty<span className="text-gradient-primary">ai</span>list. These Terms & Conditions govern your access to and use of our
+              Welcome to Sty<span className="text-[#AC1559]">ai</span>list. These Terms & Conditions govern your access to and use of our
               website by using our Website, you agree to comply with and be bound by these Terms. If
               you do not agree, please refrain from using the site.
             </p>
@@ -112,7 +112,7 @@ function Terms() {
                 5. Limitation of Liability
               </h2>
               <p>
-                To the fullest extent permitted by law, Sty<span className="text-gradient-primary">ai</span>list will not be liable for any direct,
+                To the fullest extent permitted by law, Sty<span className="text-[#AC1559]">ai</span>list will not be liable for any direct,
                 indirect, incidental, consequential, or special damages arising from your use of or
                 inability to use this Website, even if we have been advised of the possibility of
                 such damages.
@@ -124,7 +124,7 @@ function Terms() {
                 6. Indemnification
               </h2>
               <p>
-                You agree to indemnify, defend, and hold harmless Sty<span className="text-gradient-primary">ai</span>list, its team members, and
+                You agree to indemnify, defend, and hold harmless Sty<span className="text-[#AC1559]">ai</span>list, its team members, and
                 affiliates from any claims, liabilities, damages, or expenses (including legal fees)
                 arising out of your violation of these Terms or your use of the Website.
               </p>
@@ -172,7 +172,7 @@ function Terms() {
                 If you have any questions about these Terms & Conditions, please contact us at:
               </p>
               <div className="bg-foreground/5 p-4 rounded-xl font-mono text-sm">
-                <p>Sty<span className="text-gradient-primary">ai</span>list</p>
+                <p>Sty<span className="text-[#AC1559]">ai</span>list</p>
                 <p>Email: contact@styailist.com</p>
                 <p>Phone: +91 91813 23 2309</p>
                 <p>Website: http://my.styailist.com</p>

@@ -4,7 +4,7 @@ const steps = [
   {
     n: "01",
     t: "Paste one snippet",
-    d: <>Your store. Your fonts. Your colours. Sty<span className="text-gradient-primary">ai</span>list blends in like it was always there. Shopify, Woo, Magento, Webflow, Wix.</>,
+    d: <>Your store. Your fonts. Your colours. Sty<span className="text-[#AC1559]">ai</span>list blends in like it was always there. Shopify, Woo, Magento, Webflow, Wix.</>,
     icon: "</>",
   },
   {
