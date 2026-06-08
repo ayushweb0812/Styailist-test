@@ -34,7 +34,7 @@ export function Hero() {
             <span className="absolute inset-0 rounded-full bg-neon-pink animate-ping opacity-75" />
             <span className="relative rounded-full w-2 h-2 bg-neon-pink" />
           </span>
-          Experience Styailist
+          <span>Experience Sty<span className="text-gradient-primary">ai</span>list</span>
           <span className="text-neon-purple">→</span>
         </motion.a>
 
@@ -42,9 +42,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-          className="font-display text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-semibold tracking-tight leading-[1.15] text-ink mt-8 max-w-5xl mx-auto pb-2"
+          className="font-display text-4xl md:text-5xl lg:text-[3rem] xl:text-[3.5rem] font-semibold tracking-tight leading-[1.15] text-ink mt-8 w-full mx-auto pb-2"
         >
-          <span className="block">Your Customers Don't Need{" "}<span className="text-gradient-primary">More Choices.</span></span>
+          <span className="block lg:whitespace-nowrap">Your Customers Don't Need{" "}<span className="text-gradient-primary">More Choices.</span></span>
           <span className="block">They Need The{" "}<span className="text-gradient-primary">Right Ones.</span></span>
         </motion.h1>
 
@@ -72,7 +72,7 @@ export function Hero() {
                 }}
                 className="inline-block mr-[0.25em]"
               >
-                {word}
+                {word === "Styailist" ? <>Sty<span className="text-gradient-primary">ai</span>list</> : word}
               </motion.span>
             ))}
         </motion.p>
@@ -88,7 +88,7 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             className="h-12 px-7 rounded-full text-white font-medium text-sm flex items-center gap-2 hover:shadow-glow hover:scale-[1.05] transition-all active:scale-[0.98] outline-none animate-cta-pulse"
-            style={{ background: 'linear-gradient(135deg, #FF8DB8 0%, #F472B6 35%, #C084FC 70%, #A855F7 100%)' }}
+            style={{ background: 'linear-gradient(135deg, #FF6B81 0%, #7C3AED 100%)' }}
           >
             Book a demo
 
@@ -97,7 +97,7 @@ export function Hero() {
       </div>
 
       {/* Floating glass thought streams */}
-      <div className="mt-16 space-y-3 w-[95%] max-w-[1800px] mx-auto overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+      <div className="mt-28 space-y-3 w-[95%] max-w-[1800px] mx-auto overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
         <div className="flex gap-3 animate-marquee whitespace-nowrap">
           {[...Array(8)].map((_, dup) => (
             <div key={`l-${dup}`} className="flex gap-3 shrink-0">

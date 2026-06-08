@@ -29,7 +29,7 @@ const consumerStruggles = [
   {
     icon: Clock,
     title: "Wasted time",
-    desc: "Spending 15+ minutes and still leaving empty-handed.",
+    desc: "Spending 15+ minutes and still leaving empty handed.",
   },
 ];
 
@@ -42,7 +42,7 @@ const retailerStruggles = [
   {
     icon: PackageOpen,
     title: "Return drain",
-    desc: "30% of purchases come back — eating margin and morale.",
+    desc: "30% of purchases come back  eating margin and morale.",
   },
   {
     icon: Users,
@@ -75,7 +75,7 @@ export function Struggles() {
             Their struggle. <span className="text-gradient-primary">Your struggle.</span>
           </h2>
           <p className="text-foreground/60 mt-4 max-w-xl mx-auto leading-relaxed">
-            Two sides of the same problem. Shoppers can't find what's theirs. You can't show them.
+            Two sides of the same problem. Shoppers can't find what's theirs. You can't show them what excatly they should buy.
           </p>
         </motion.div>
 

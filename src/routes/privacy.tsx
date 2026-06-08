@@ -42,7 +42,7 @@ function Privacy() {
 
           <div className="space-y-10 text-foreground/75 leading-relaxed relative z-10 text-base md:text-lg">
             <p className="text-sm text-foreground/70 mb-8 italic">
-              At Styailist, These Terms shall be governed by and construed in accordance with the
+              At Sty<span className="text-gradient-primary">ai</span>list, These Terms shall be governed by and construed in accordance with the
               laws of India.
               <br />• Jurisdiction: All claims arising out of or relating to these Terms or the use
               of the Services shall be subject to the exclusive jurisdiction of the courts in
@@ -59,7 +59,7 @@ function Privacy() {
               <div className="space-y-4">
                 <p>
                   As part of our services, we collect information from users who visit our website,
-                  reach out for business inquiries, or apply for career opportunities at Styailist.
+                  reach out for business inquiries, or apply for career opportunities at Sty<span className="text-gradient-primary">ai</span>list.
                   We gather this data to ensure smooth communication, deliver services, and enhance
                   your experience with us.
                 </p>
@@ -150,7 +150,7 @@ function Privacy() {
               </h2>
               <h3 className="text-lg font-semibold text-ink mb-2">Website Analytics</h3>
               <p className="mb-4">
-                Styailist uses analytics tools like Google Analytics to understand how users
+                Sty<span className="text-gradient-primary">ai</span>list uses analytics tools like Google Analytics to understand how users
                 interact with our website. This includes metrics such as time spent on pages,
                 navigation patterns, and browser/device types. No personally identifiable
                 information is stored or shared through this process.
@@ -183,7 +183,7 @@ function Privacy() {
                 free to reach out:
               </p>
               <div className="bg-foreground/5 p-4 rounded-xl font-mono text-sm">
-                <p>Styailist</p>
+                <p>Sty<span className="text-gradient-primary">ai</span>list</p>
                 <p>Email: contact@styailist.com</p>
                 <p>Phone: +91 91813 23 2309</p>
                 <p>Website: http://my.styailist.com</p>

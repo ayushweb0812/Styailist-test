@@ -169,13 +169,13 @@
 
 @layer utilities {
   .text-gradient-warm {
-    background: linear-gradient(90deg, #FF8DB8, #C084FC);
+    background: linear-gradient(90deg, #FF6B81, #7C3AED);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .text-gradient-primary {
-    background: linear-gradient(90deg, #FF8DB8, #C084FC);
+    background: linear-gradient(90deg, #FF6B81, #7C3AED);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;

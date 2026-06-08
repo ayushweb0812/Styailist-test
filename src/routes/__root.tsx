@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import appCss from "../styles.css?url";
 import { SmoothScroll } from "../components/site/SmoothScroll";
 import { PageTransition } from "../components/site/PageTransition";
-import { CustomCursor } from "../components/site/CustomCursor";
+
 
 function NotFoundComponent() {
   return (
@@ -87,7 +87,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   return (
     <SmoothScroll>
-      <CustomCursor />
+
       <AnimatePresence mode="wait">
         <PageTransition>
           <Outlet />

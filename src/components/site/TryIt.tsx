@@ -7,18 +7,18 @@ import dressDaisy from "@/assets/dress-daisy.jpg";
 
 type Product = { name: string; img: string; match: number };
 type Msg =
-  | { id: string; from: "ai" | "user"; text: string }
+  | { id: string; from: "ai" | "user"; text: React.ReactNode }
   | { id: string; from: "ai"; products: Product[] };
 
 const floralProducts: Product[] = [
-  { name: "Rose garden midi", img: dressRose, match: 96 },
-  { name: "Wildflower wrap", img: dressWildflower, match: 94 },
-  { name: "Peony silk slip", img: dressPeony, match: 92 },
-  { name: "Daisy linen maxi", img: dressDaisy, match: 90 },
+  { name: "Rose Garden Midi", img: dressRose, match: 96 },
+  { name: "Wildflower Wrap", img: dressWildflower, match: 94 },
+  { name: "Peony Silk Slip", img: dressPeony, match: 92 },
+  { name: "Daisy Linen Maxi", img: dressDaisy, match: 98 },
 ];
 
 const script: Msg[] = [
-  { id: "m1", from: "ai", text: "Hi, I'm Styailist AI. How can I help you today?" },
+  { id: "m1", from: "ai", text: <>Hi, I'm Sty<span className="text-gradient-primary">ai</span>list AI. How can I help you today?</> },
   { id: "m2", from: "user", text: "Help me find a floral dress." },
   { id: "m3", from: "ai", text: "Getting the right outfits for you…" },
   { id: "m4", from: "ai", products: floralProducts },
@@ -80,12 +80,12 @@ export function TryIt() {
               viewport={{ once: true }}
               className="font-serif text-4xl md:text-6xl font-normal tracking-tight mt-4 leading-[1.02]"
             >
-              A glimpse of <span className="italic text-gradient-primary">how it works.</span>
+              A glimpse of <span className="text-gradient-primary">how it works.</span>
             </motion.h2>
           </div>
           <div className="md:col-span-4 md:col-start-9">
             <p className="text-foreground/65 leading-relaxed">
-              One short chat. Styailist surfaces the products genuinely right for them — in seconds.
+              One short chat. Sty<span className="text-gradient-primary">ai</span>list surfaces the products genuinely right for them  in seconds.
             </p>
           </div>
         </div>
@@ -108,7 +108,7 @@ export function TryIt() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <span className="font-display text-sm font-semibold">Styailist</span>
+                <span className="font-display text-sm font-semibold">Sty<span className="text-gradient-primary">ai</span>list</span>
                 <span className="ml-2 flex items-center gap-1 text-[10px] font-mono text-foreground/55">
                   <span className="w-1.5 h-1.5 rounded-full bg-neon-purple animate-pulse" /> live
                 </span>
@@ -132,8 +132,8 @@ export function TryIt() {
                     {"text" in m ? (
                       <div
                         className={`max-w-[78%] rounded-2xl px-4 py-2.5 text-sm leading-snug ${m.from === "user"
-                            ? "bg-gradient-to-br from-neon-pink to-neon-purple text-white rounded-br-md shadow-glow"
-                            : "bg-white/80 ring-1 ring-white/70 text-ink rounded-bl-md"
+                          ? "bg-gradient-to-br from-neon-pink to-neon-purple text-white rounded-br-md shadow-glow"
+                          : "bg-white/80 ring-1 ring-white/70 text-ink rounded-bl-md"
                           }`}
                       >
                         {m.text}
@@ -147,7 +147,7 @@ export function TryIt() {
                               initial={{ opacity: 0, scale: 0.9, y: 10 }}
                               animate={{ opacity: 1, scale: 1, y: 0 }}
                               transition={{ delay: 0.08 * i, duration: 0.4 }}
-                              className="aspect-[3/4] rounded-xl relative overflow-hidden ring-1 ring-white/60 bg-white/40"
+                              className="aspect-[3/4] rounded-3xl relative overflow-hidden bg-white/40 shadow-sm"
                             >
                               <img
                                 src={p.img}
@@ -157,11 +157,11 @@ export function TryIt() {
                                 height={704}
                                 className="absolute inset-0 w-full h-full object-cover"
                               />
-                              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent" />
-                              <span className="absolute top-1.5 right-1.5 font-mono text-[9px] bg-white/90 text-ink px-1.5 py-0.5 rounded">
+                              <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                              <span className="absolute top-2.5 right-2.5 font-sans font-bold text-[10px] bg-white text-ink px-2.5 py-1 rounded-full shadow-sm">
                                 {p.match}%
                               </span>
-                              <span className="absolute bottom-1.5 left-1.5 right-1.5 text-[10px] font-medium text-white leading-tight drop-shadow">
+                              <span className="absolute bottom-4 left-0 right-0 text-center text-[11.5px] font-medium text-white leading-tight drop-shadow-md px-2">
                                 {p.name}
                               </span>
                             </motion.div>
@@ -195,7 +195,7 @@ export function TryIt() {
 
             <div className="px-5 py-3 border-t border-white/40 bg-white/40 flex items-center gap-2">
               <div className="flex-1 rounded-full bg-white/70 ring-1 ring-white/60 px-4 py-2 text-xs text-foreground/50">
-                Ask Styailist anything…
+                Ask Sty<span className="text-gradient-primary">ai</span>list anything…
               </div>
               <div className="w-9 h-9 rounded-full bg-gradient-to-br from-neon-pink to-neon-purple flex items-center justify-center text-white text-sm">
                 →
@@ -248,7 +248,7 @@ export function TryIt() {
               </dl>
 
               <div className="mt-5 flex gap-2">
-                {["#c44a1f", "#a8c0a0", "#f0d78c", "#f8c8c0"].map((c) => (
+                {["#B2CBDF", "#D0C0E0", "#a8c0a0", "#f8c8c0"].map((c) => (
                   <div
                     key={c}
                     className="flex-1 h-7 rounded-full ring-1 ring-white/10"

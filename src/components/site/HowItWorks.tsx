@@ -4,7 +4,7 @@ const steps = [
   {
     n: "01",
     t: "Paste one snippet",
-    d: "Your store. Your fonts. Your colours. Styailist blends in like it was always there. Shopify, Woo, Magento, Webflow, Wix.",
+    d: <>Your store. Your fonts. Your colours. Sty<span className="text-gradient-primary">ai</span>list blends in like it was always there. Shopify, Woo, Magento, Webflow, Wix.</>,
     icon: "</>",
   },
   {
@@ -27,26 +27,23 @@ export function HowItWorks() {
       <div className="absolute top-1/3 -right-32 w-[40vw] h-[40vw] rounded-full bg-neon-purple/10 blur-[120px] -z-10" />
 
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-12 gap-8 items-end mb-14">
-          <div className="md:col-span-7">
-            <span className="text-[11px] uppercase tracking-[0.25em] text-foreground/55 font-medium">
-              — How it works —
-            </span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="font-serif text-4xl md:text-6xl font-normal tracking-tight mt-4 leading-[1.02]"
-            >
-              You don't need a developer, a design team, or a sales call,{" "}
-              <span className="italic text-gradient-primary">just 24 hours.</span>
-            </motion.h2>
-          </div>
-          <div className="md:col-span-4 md:col-start-9">
-            <p className="text-foreground/65 leading-relaxed">
-              From snippet to live stylist on your storefront. Three steps, one afternoon.
-            </p>
-          </div>
+        <div className="mb-14">
+          <span className="text-[11px] uppercase tracking-[0.25em] text-foreground/55 font-medium">
+            — How it works —
+          </span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-serif text-4xl md:text-6xl font-normal tracking-tight mt-4 leading-[1.02] max-w-5xl"
+            style={{ textWrap: 'balance' }}
+          >
+            You don't need a developer, a design team, or a sales call,{" "}
+            <span className="text-gradient-primary whitespace-nowrap">just 24 hours.</span>
+          </motion.h2>
+          <p className="text-foreground/65 leading-relaxed mt-6 max-w-2xl">
+            From snippet to live stylist on your storefront. Three steps, one afternoon.
+          </p>
         </div>
 
         <div className="relative">
@@ -56,7 +53,7 @@ export function HowItWorks() {
             preserveAspectRatio="none"
           >
             <motion.path
-              d="M 0 150 C 150 150, 200 50, 325 50 C 480 50, 580 110, 735 110 C 890 110, 990 50, 1145 50 C 1180 50, 1200 100, 1200 100"
+              d="M 0 150 C 150 150, 200 50, 325 50 C 480 50, 580 50, 735 50 C 890 50, 990 50, 1145 50 C 1180 50, 1200 100, 1200 100"
               stroke="url(#grad-how)"
               strokeWidth="2"
               fill="none"
@@ -83,10 +80,9 @@ export function HowItWorks() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                style={{ marginTop: i === 1 ? "3rem" : "0" }}
-                className="relative group"
+                className={`relative group h-full ${i === 1 ? 'scale-105 z-10' : ''}`}
               >
-                <div className="rounded-3xl p-8 transition-all hover:-translate-y-1" style={{ background: 'rgba(255,255,255,.9)', border: '1px solid rgba(255,192,203,.15)', boxShadow: '0 10px 30px rgba(0,0,0,.04)' }}>
+                <div className="h-full rounded-3xl p-8 transition-all hover:-translate-y-1" style={{ background: 'rgba(255,255,255,.9)', border: '1px solid rgba(255,192,203,.15)', boxShadow: '0 10px 30px rgba(0,0,0,.04)' }}>
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-xs text-foreground/50">{s.n}</span>
                     <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-neon-pink/15 to-neon-purple/15 text-ink flex items-center justify-center text-lg ring-1 ring-white/60 group-hover:from-neon-pink group-hover:to-neon-purple group-hover:text-white transition-colors">

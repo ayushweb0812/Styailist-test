@@ -17,8 +17,8 @@ export const Route = createFileRoute("/pricing")({
 const plans = [
   {
     name: "Starter",
-    desc: "Up to 3,000 products + Up to 2,000 style queries / month",
-    price: { monthly: "$199", annual: "$164" },
+    desc: "For growing fashion brands getting started with AI personalization.",
+    price: { monthly: "$299", annual: "$249" },
     suffix: "/month",
     cta: "Get Started",
     popular: true,
@@ -26,8 +26,8 @@ const plans = [
   },
   {
     name: "Growth",
-    desc: "Up to 10,000 products + Up to 10,000 style queries / month",
-    price: { monthly: "$399", annual: "$210" },
+    desc: "For scaling brands ready to optimize conversions and shopper insights.",
+    price: { monthly: "$599", annual: "$499" },
     suffix: "/month",
     cta: "Start Growing",
     popular: false,
@@ -35,7 +35,7 @@ const plans = [
   },
   {
     name: "Enterprise",
-    desc: "Custom pricing for multi-brand or enterprise retailers",
+    desc: "For high-volume retailers requiring unlimited scale and custom integrations.",
     price: { monthly: "Custom", annual: "Custom" },
     cta: "Talk to sales",
     popular: false,
@@ -116,15 +116,7 @@ function PricingPage() {
     <main className="min-h-screen bg-background overflow-x-hidden flex flex-col relative z-0 pt-24">
       {/* Ambient background with grid and glows */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        {/* Subtle grid */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-          }}
-        />
+
         {/* Left pink glow */}
         <div className="absolute top-[10%] left-[-20%] w-[60vw] h-[60vw] rounded-full bg-neon-pink/15 blur-[140px]" />
         {/* Right purple glow */}
@@ -177,11 +169,31 @@ function PricingPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="hidden md:flex bg-white rounded-[2rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] items-start"
+            className="hidden md:flex flex-col rounded-[2rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] justify-between h-full"
+            style={{
+              background: 'linear-gradient(135deg, rgba(255,240,245,0.9) 0%, rgba(243,232,255,0.9) 100%)'
+            }}
           >
-            <h3 className="font-display text-[1.65rem] font-medium leading-[1.1] text-ink mt-2">
-              Start your<br />Free Trial
-            </h3>
+            <div>
+              <h3 className="font-display text-[1.75rem] font-semibold leading-[1.15] text-ink tracking-tight">
+                Not Sure <span className="text-gradient-primary">Where To Start?</span>
+              </h3>
+              <p className="text-[13px] text-ink/60 mt-4 leading-relaxed pr-2">
+                Try Styailist and see how AI personalization can fit your brand.
+              </p>
+            </div>
+
+            <div className="mt-8">
+              <a
+                href="https://my.styailist.com/signup"
+                className="block text-center w-full rounded-full bg-[#0A0310] text-white py-3.5 text-[13px] font-medium hover:scale-[1.02] transition-transform"
+              >
+                Start 14 Day Free Trial →
+              </a>
+              <p className="text-center text-[10.5px] text-ink/40 mt-4 font-medium">
+                Included with all features
+              </p>
+            </div>
           </motion.div>
 
           {/* Col 2-4: Plans */}
@@ -254,13 +266,16 @@ function PricingPage() {
                     )}
                   </div>
                   <button
-                    className={`w-full rounded-full py-2.5 text-[13px] font-medium transition-all ${p.popular
+                    className={`w-full rounded-full py-3.5 text-[13px] font-medium transition-all ${p.popular
                       ? "bg-white text-ink hover:scale-[1.02]"
                       : "bg-[#150624] text-white hover:scale-[1.02]"
                       }`}
                   >
                     {p.cta} →
                   </button>
+                  <p className="text-center text-[10.5px] mt-4 font-medium opacity-0 pointer-events-none" aria-hidden>
+                    Spacer
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -275,9 +290,12 @@ function PricingPage() {
             {/* Col 1: Labels */}
             <div className="bg-white/80 rounded-[2rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hidden md:block">
               {featureData.map((cat, catIdx) => (
-                <div key={cat.category} className={catIdx !== 0 ? "mt-10" : ""}>
-                  <div className={`flex flex-col justify-end border-b border-foreground/20 pb-2 mb-4 ${HEADER_HEIGHT}`}>
-                    <h4 className="font-semibold text-[13px] text-ink">{cat.category}</h4>
+                <div key={cat.category} className={catIdx !== 0 ? "mt-10 relative" : "relative"}>
+                  {catIdx !== 0 && (
+                    <div className="absolute -top-5 left-0 w-[90%] h-px bg-foreground/15" />
+                  )}
+                  <div className={`flex flex-col justify-end pb-2 mb-4 ${HEADER_HEIGHT}`}>
+                    <h4 className="font-semibold text-[13px] text-[#A855F7]">{cat.category}</h4>
                   </div>
                   <div className="flex flex-col gap-3">
                     {cat.items.map((item) => (
@@ -303,7 +321,7 @@ function PricingPage() {
                 {featureData.map((cat, catIdx) => (
                   <div key={cat.category} className={catIdx !== 0 ? "mt-10 relative" : "relative"}>
                     {catIdx !== 0 && (
-                      <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-px bg-white/10" />
+                      <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-[80%] h-px bg-white/10" />
                     )}
                     {/* Mobile Header */}
                     <div className="md:hidden flex flex-col justify-end border-b border-white/10 pb-2 mb-4">
@@ -329,7 +347,7 @@ function PricingPage() {
               {featureData.map((cat, catIdx) => (
                 <div key={cat.category} className={catIdx !== 0 ? "mt-10 relative" : "relative"}>
                   {catIdx !== 0 && (
-                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-px bg-foreground/20" />
+                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-[80%] h-px bg-foreground/15" />
                   )}
                   {/* Mobile Header */}
                   <div className="md:hidden flex flex-col justify-end border-b border-foreground/20 pb-2 mb-4">
@@ -354,7 +372,7 @@ function PricingPage() {
               {featureData.map((cat, catIdx) => (
                 <div key={cat.category} className={catIdx !== 0 ? "mt-10 relative" : "relative"}>
                   {catIdx !== 0 && (
-                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-px bg-foreground/20" />
+                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-[80%] h-px bg-foreground/15" />
                   )}
                   {/* Mobile Header */}
                   <div className="md:hidden flex flex-col justify-end border-b border-foreground/20 pb-2 mb-4">

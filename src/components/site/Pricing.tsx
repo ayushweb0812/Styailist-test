@@ -6,8 +6,8 @@ import { Link } from "@tanstack/react-router";
 const plans = [
   {
     name: "Starter",
-    desc: "Up to 3,000 products + Up to 2,000 style queries / month",
-    price: { monthly: "$299", annual: "$164" },
+    desc: "For growing fashion brands getting started with AI personalization.",
+    price: { monthly: "$299", annual: "$249" },
     suffix: "/month",
     cta: "Get Started",
     popular: true,
@@ -21,8 +21,8 @@ const plans = [
   },
   {
     name: "Growth",
-    desc: "Up to 10,000 products + Up to 10,000 style queries / month",
-    price: { monthly: "$599", annual: "$210" },
+    desc: "For scaling brands ready to optimize conversions and shopper insights.",
+    price: { monthly: "$599", annual: "$499" },
     suffix: "/month",
     cta: "Start Growing",
     popular: false,
@@ -36,7 +36,7 @@ const plans = [
   },
   {
     name: "Enterprise",
-    desc: "Custom pricing for multi-brand or enterprise retailers",
+    desc: "For high-volume retailers requiring unlimited scale and custom integrations.",
     price: { monthly: "Custom", annual: "Custom" },
     cta: "Talk to sales",
     popular: false,
@@ -102,11 +102,10 @@ export function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className={`relative rounded-[2rem] text-left p-8 transition-all ${
-                p.popular
-                  ? "text-background"
-                  : "hover:-translate-y-1"
-              }`}
+              className={`relative rounded-[2rem] text-left p-8 transition-all ${p.popular
+                ? "text-background"
+                : "hover:-translate-y-1"
+                }`}
               style={
                 p.popular
                   ? { background: 'linear-gradient(135deg, #1B0728, #34104D)', boxShadow: '0 20px 60px rgba(192,132,252,.25)' }
@@ -129,11 +128,10 @@ export function Pricing() {
                   <h3 className="font-display text-2xl font-semibold">{p.name}</h3>
                   {p.save && (
                     <span
-                      className={`rounded-full px-2.5 py-0.5 text-[10px] font-mono uppercase tracking-wider ${
-                        p.popular
-                          ? "bg-white/15 text-background ring-1 ring-white/20"
-                          : "bg-neon-purple/15 text-neon-purple ring-1 ring-neon-purple/20"
-                      }`}
+                      className={`rounded-full px-2.5 py-0.5 text-[10px] font-mono uppercase tracking-wider ${p.popular
+                        ? "bg-white/15 text-background ring-1 ring-white/20"
+                        : "bg-neon-purple/15 text-neon-purple ring-1 ring-neon-purple/20"
+                        }`}
                     >
                       {p.save}
                     </span>
@@ -157,11 +155,10 @@ export function Pricing() {
                   )}
                 </div>
                 <button
-                  className={`mt-6 w-full rounded-full py-3 text-sm font-medium transition-all ${
-                    p.popular
-                      ? "bg-white text-ink hover:bg-primary hover:text-white"
-                      : "bg-ink text-background hover:shadow-glow"
-                  }`}
+                  className={`mt-6 w-full rounded-full py-3 text-sm font-medium transition-all ${p.popular
+                    ? "bg-white text-ink hover:bg-primary hover:text-white"
+                    : "bg-ink text-background hover:shadow-glow"
+                    }`}
                 >
                   {p.cta} →
                 </button>

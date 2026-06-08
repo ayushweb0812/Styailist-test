@@ -81,7 +81,7 @@ export function Problem() {
           </div>
           <div className="md:col-span-4 md:col-start-9">
             <p className="text-foreground/65 leading-relaxed">
-              They wanted that one product your website is still waiting to show them — buried under
+              They wanted that one product your website is still waiting to show them, buried under
               4,000 others that aren't.
             </p>
           </div>
@@ -136,11 +136,10 @@ export function Problem() {
               <h3 className="font-serif text-3xl md:text-5xl font-normal mt-4 leading-[1.02]">
                 Your catalogue
                 <br />
-                <span className="text-gradient-primary">just got Smarter.</span>
+                <span className="text-gradient-primary">just got smarter.</span>
               </h3>
               <p className="text-background/70 mt-5 max-w-md leading-relaxed">
-                Styailist reads every shopper. Understands their style. Shows them exactly what's
-                theirs.
+                Sty<span className="text-gradient-primary">ai</span>list reads every shopper. Understands their style. Shows them exactly what they will like.
               </p>
             </div>
             <div className="md:col-span-5 grid gap-2.5">
@@ -157,7 +156,7 @@ export function Problem() {
                 },
                 {
                   t: "Blend",
-                  d: "Add a piece they're shopping for — we find the combination",
+                  d: "Add a piece they're shopping for,  we find the combination",
                   iconSrc: "/Blend.svg",
                 },
               ].map((c, i) => (
@@ -175,7 +174,6 @@ export function Problem() {
                     <p className="font-medium">{c.t}</p>
                     <p className="text-xs text-background/60 mt-0.5">{c.d}</p>
                   </div>
-                  <span className="text-background/40">→</span>
                 </motion.div>
               ))}
             </div>
