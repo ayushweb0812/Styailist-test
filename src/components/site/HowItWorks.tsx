@@ -80,19 +80,19 @@ export function HowItWorks() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className={`relative group h-full ${i === 1 ? 'scale-105 z-10' : ''}`}
+                className="relative group h-full"
               >
-                <div className="h-full rounded-3xl p-8 transition-all hover:-translate-y-1" style={{ background: 'rgba(255,255,255,.9)', border: '1px solid rgba(255,192,203,.15)', boxShadow: '0 10px 30px rgba(0,0,0,.04)' }}>
+                <div className="h-full rounded-3xl p-8 transition-all hover:-translate-y-1 flex flex-col" style={{ background: 'rgba(255,255,255,.9)', border: '1px solid rgba(255,192,203,.15)', boxShadow: '0 10px 30px rgba(0,0,0,.04)' }}>
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-xs text-foreground/50">{s.n}</span>
                     <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-neon-pink/15 to-neon-purple/15 text-ink flex items-center justify-center text-lg ring-1 ring-white/60 group-hover:from-neon-pink group-hover:to-neon-purple group-hover:text-white transition-colors">
                       {s.icon}
                     </div>
                   </div>
-                  <h3 className="font-display text-2xl md:text-3xl font-medium mt-8 leading-tight">
+                  <h3 className="font-display text-2xl md:text-3xl font-medium mt-8 mb-3 leading-tight min-h-[4rem] md:min-h-[5rem]">
                     {s.t}
                   </h3>
-                  <p className="text-sm text-foreground/65 mt-3 leading-relaxed">{s.d}</p>
+                  <p className="text-sm text-foreground/65 leading-relaxed">{s.d}</p>
                 </div>
               </motion.div>
             ))}
